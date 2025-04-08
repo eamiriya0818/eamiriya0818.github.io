@@ -2,10 +2,3 @@
   <img src=" " alt="我的英雄學院" width="300">
   <p><a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank">在 IMDB 上查看</a></p>
 </div>
-<div style="display: flex; align-items: center;">
-  <img src="你的照片網址" alt="我的照片" style="width: 150px; margin-right: 20px; border-radius: 8px;">
-  <div>
-    <h2>你好，我是 XXX</h2>
-    <p>這是我的影評部落格，歡迎來看看我的觀點～</p>
-  </div>
-</div>
