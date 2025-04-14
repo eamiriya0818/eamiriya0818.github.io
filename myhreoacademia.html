@@ -26,12 +26,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我的影評網站</title>
   <style>
-    /* 調整 header，讓 logo 靠得更上面 */
+    /* 重置 body 預設邊距 */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* header 區塊利用 Flexbox 將內容水平靠左並垂直置中 */
     header {
       display: flex;              
-      justify-content: flex-start; /* 水平對齊靠左 */
+      justify-content: flex-start; /* 水平靠左 */
       align-items: center;         /* 垂直置中 */
-      padding: 0px 10px 10px 10px;  /* 將上邊距設為 0，其他邊距保持 10px */
+      padding: 0px 10px 10px 10px;  /* 上: 0, 右: 10px, 下: 10px, 左: 10px */
+      background-color: #f0f0f0;    /* 可調整背景顏色 */
     }
 
     /* 設定 logo 的尺寸 */
@@ -51,8 +58,9 @@
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo" width="150">
   </header>
   <main>
-    <h1>歡迎來到我BLOG </h1>
+    <h1>歡迎來到窩的BLOG </h1>
     <p>這裡是最新的影評內容...</p>
   </main>
 </body>
 </html>
+
