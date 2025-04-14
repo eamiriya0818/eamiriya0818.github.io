@@ -19,19 +19,30 @@
   <title>我在Netfilx 學到的人生觀</title>
   <link rel="stylesheet" href="style.css" />
 </head>
- <!-- 放置 logo 的區塊 -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我的影評網站</title>
   <style>
+    /* 調整 header，讓 logo 靠得更上面 */
     header {
-      display: flex;              /* 啟用 Flex 布局 */
-      justify-content: flex-start; /* 水平對齊設定為靠左 */
-      align-items: center;        /* 垂直置中元素 */
-      padding: 10px;
+      display: flex;              
+      justify-content: flex-start; /* 水平對齊靠左 */
+      align-items: center;         /* 垂直置中 */
+      padding: 0px 10px 10px 10px;  /* 將上邊距設為 0，其他邊距保持 10px */
+    }
+
+    /* 設定 logo 的尺寸 */
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    /* 主內容區的基本排版 */
+    main {
+      margin: 20px;
     }
   </style>
 </head>
@@ -40,12 +51,8 @@
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo" width="150">
   </header>
   <main>
-    <h1>歡迎來到我的影評網站</h1>
+    <h1>歡迎來到我BLOG </h1>
     <p>這裡是最新的影評內容...</p>
   </main>
 </body>
 </html>
-
-
-
-  
