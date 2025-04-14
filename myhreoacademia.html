@@ -1,72 +1,78 @@
-<div style="text-align: center;">
-  <img src="mqdefault.jpg.jpg" alt="我的英雄學院" width="300">
-  <p><a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank"> Netfilx影評,關於影集所帶給我的人生觀 </a></p>
-</div>
-<head>
-  <style>
-    body {
-      background-color: #C2A588;
-      color: #2E2E2E; /* 深灰字體，比黑色柔和，搭奶茶色很舒服 */
-      font-family: "Arial", sans-serif;
-    }
-  </style>
-</head>
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我在Netfilx 學到的人生觀</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我的影評網站</title>
+  
+  <!-- 內嵌 CSS 可選，或引用外部 style.css -->
   <style>
     /* 重置預設邊距 */
     html, body {
       margin: 0;
       padding: 0;
+      background-color: #C2A588; /* 你的背景色 */
+      color: #2E2E2E; /* 深灰字體 */
+      font-family: "Arial", sans-serif;
     }
-
-    /* 固定置頂的 header */
+    
+    /* 上方置頂 header */
     header {
-      position: fixed;             /* 固定定位 */
-      top: 0;                      /* 緊貼頁面上方 */
-      left: 0;                     /* 緊貼左邊 */
-      width: 100%;                 /* 撐滿整個視窗寬度 */
-      display: flex;              
-      justify-content: flex-start; /* 內容水平靠左 */
-      align-items: center;         /* 內容垂直置中 */
-      padding: 0px 10px 10px 10px;  /* 注意上邊距為 0 */
-      background-color: #f0f0f0;    /* 背景顏色，可調整 */
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 可選：增加陰影效果 */
-      z-index: 1000;               /* 確保 header 位於頂層 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0px 10px 10px 10px;
+      background-color: #f0f0f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
-
-    /* 設定 logo 的尺寸 */
+    
+    /* logo 設定 */
     .logo {
       width: 150px;
       height: auto;
     }
-
-    /* 給 main 補上足夠的上邊距，避免被 header 蓋住 */
+    
+    /* main 區塊，補足 header 高度 */
     main {
-      margin: 70px 20px 20px 20px;  /* 上邊距根據 header 的高度調整 */
+      margin: 70px 20px 20px 20px;
+    }
+    
+    /* 中央內容區 (例如影片圖片及連結) */
+    .center-content {
+      text-align: center;
+      margin: 20px;
+    }
+    
+    .center-content img {
+      width: 300px;
     }
   </style>
 </head>
 <body>
+  <!-- 固定頂部 header -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo" width="150">
   </header>
+  
+  <!-- 主內容區域 -->
   <main>
-    <h1>WECLOME MY BLOG </h1>
+    <h1>WELCOME MY BLOG</h1>
     <p>這裡是最新的影評內容...</p>
+    
+    <!-- 中央顯示區塊例子 -->
+    <div class="center-content">
+      <img src="mqdefault.jpg.jpg" alt="我的英雄學院">
+      <p>
+        <a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank">
+          Netfilx影評, 關於影集所帶給我的人生觀
+        </a>
+      </p>
+    </div>
   </main>
 </body>
 </html>
-
