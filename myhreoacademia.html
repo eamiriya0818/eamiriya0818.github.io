@@ -21,18 +21,19 @@
 </head>
  <!-- 放置 logo 的區塊 -->
   <header>
-    <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
+    <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class=width="150"
   </header>
- 
+ <main>
+    <h1>歡迎來到我的影評網站</h1>
+    <p>這裡是最新的影評內容...</p>
+  </main>
+</body>
+</html>
 header {
-  text-align: left;  /* 文字跟內部元素靠左 */
-  padding: 20px;
-}
-
-.logo {
-  width: 150px;
-  height: 100px;
-  object-fit: contain;  /* 或 cover 根據需求決定 */
+  display: flex;              /* 啟用 Flex 布局 */
+  justify-content: flex-start; /* 水平對齊設定為靠左 */
+  align-items: center;        /* 若有其他元素可讓它們垂直置中 */
+  padding: 10px;
 }
 
 
