@@ -1,81 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我在Netfilx影集學到的人生觀</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>我的影評網站</title>
   <style>
-    /* 統一頁面底色與字體設定 */
+    /* 網頁整體背景色、字體等 */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #C2A588;  /* 奶茶色，用於全頁背景 */
+      background-color: #C2A588;
       color: #2E2E2E;
       font-family: "Arial", sans-serif;
     }
 
-    /* 固定置頂的 header */
     header {
+      /* 固定置頂 header，略 */
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      align-items: center;
+      top: 0; left: 0; width: 100%;
+      display: flex; align-items: center;
       padding: 0 10px 10px 10px;
-      background-color: #C2A588;  /* 修改為奶茶色，統一頁面背景 */
-      /* 移除了 box-shadow，避免產生陰影效果影響整體顏色 */
+      background-color: #C2A588;
       z-index: 1000;
     }
-
-    /* LOGO 的樣式 */
     .logo {
-      width: 150px;
-      height: auto;
-      display: block;
-      border: none;
+      width: 150px; height: auto;
     }
-
-    /* 新增：header 旁邊的標題文字 */
     .header-title {
       margin-left: 10px;
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 24px; font-weight: bold;
     }
 
-    /* 主內容區域設定 */
+    /* 主內容區域 */
     main {
       margin: 70px 20px 20px 20px;
-      background-color: #C2A588;  /* 讓 main 區背景同樣為奶茶色 */
     }
 
-    /* 中央內容示例 */
+    /* 讓內容在右側的設定 */
     .center-content {
-      text-align: center;
+      text-align: right; /* 關鍵：向右對齊 */
       margin: 20px;
     }
-    .center-content img {
-      width: 300px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
+    /* 你可以加上想要的圖片樣式，如果需要 */
+    /* .center-content img {
+       ...
+    } */
   </style>
 </head>
 <body>
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
-    <h1 class="header-title">歡迎來到我的Blog</h1>
+    <h1 class="header-title">歡迎來到我 Blog</h1>
   </header>
   <main>
     <h2>這裡是最新的影評內容...</h2>
+    
     <div class="center-content">
-      <img src="mqdefault.jpg.jpg" alt="我的英雄學院">
-      <p>
-        <a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank">
-          Netfilx影評, 關於影集所帶給我的人生觀
-        </a>
-      </p>
+      <!-- 把圖片與文字都放在同一個 <a> 裏面 -->
+      <a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank">
+        <img src="mqdefault.jpg.jpg" alt="我的英雄學院" width="300"><br>
+        Netfilx影評, 關於影集所帶給我的人生觀
+      </a>
     </div>
   </main>
 </body>
