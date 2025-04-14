@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>從Netfilx影集我得到了什麼</title>
-  
-  <!-- 內嵌 CSS 可選，或引用外部 style.css -->
+  <title>我的影評網站</title>
   <style>
-    /* 重置預設邊距 */
+    /* 1. 讓整個頁面都是奶茶色 */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #C2A588; /* 你的背景色 */
-      color: #2E2E2E; /* 深灰字體 */
+      background-color: #C2A588; /* 奶茶色 */
+      color: #2E2E2E;
       font-family: "Arial", sans-serif;
     }
-    
-    /* 上方置頂 header */
+
+    /* 2. 將 header 置頂，並讓它背景也為奶茶色 */
     header {
       position: fixed;
       top: 0;
@@ -25,49 +23,48 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 0px 10px 10px 10px;
-      background-color: #f0f0f0;
+      padding: 0 10px 10px 10px;
+      background-color: #C2A588; 
+      /* 如果不想陰影，就註解掉下面這行 */
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       z-index: 1000;
     }
-    
-    /* logo 設定 */
+
+    /* 3. LOGO 設定 */
     .logo {
       width: 150px;
       height: auto;
-       height: auto;
-  border: none;   /* 移除邊框 */
-  display: block; /* 避免 inline 元素的底部空隙 */
+      display: block; /* 避免 inline 元素產生底部空白 */
+      border: none;   /* 確保無邊框 */
     }
-    
-    /* main 區塊，補足 header 高度 */
+
+    /* 4. main 區塊，預留 header 的高度 (約 70px) */
     main {
       margin: 70px 20px 20px 20px;
+      /* 因為 body 已經是奶茶色，所以這裡可不再指定背景 */
     }
-    
-    /* 中央內容區 (例如影片圖片及連結) */
+
     .center-content {
       text-align: center;
       margin: 20px;
     }
-    
     .center-content img {
       width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
-  <!-- 固定頂部 header -->
   <header>
-    <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo" width="150" 
+    <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
   </header>
-  
-  <!-- 主內容區域 -->
+
   <main>
     <h1>WELCOME MY BLOG</h1>
     <p>這裡是最新的影評內容...</p>
-    
-    <!-- 中央顯示區塊例子 -->
+
     <div class="center-content">
       <img src="mqdefault.jpg.jpg" alt="我的英雄學院">
       <p>
