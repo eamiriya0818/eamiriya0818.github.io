@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>我的影評網站</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於影集 我學到的</title>
   <style>
-    /* 網頁整體背景色、字體等 */
+    /* 1. 統一頁面背景與字體設定 */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #C2A588;
-      color: #2E2E2E;
+      background-color: #C2A588;  /* 奶茶色背景 */
+      color: #2E2E2E;           /* 深灰字體 */
       font-family: "Arial", sans-serif;
     }
-
+    
+    /* 2. 固定置頂的 header 區域
+         修改重點：背景顏色統一使用奶茶色，避免白邊，
+         並用 Flexbox 讓 LOGO 與文字同行排列 */
     header {
-      /* 固定置頂 header，略 */
       position: fixed;
-      top: 0; left: 0; width: 100%;
-      display: flex; align-items: center;
-      padding: 0 10px 10px 10px;
-      background-color: #C2A588;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;         /* 垂直置中 */
+      padding: 0 10px 10px 10px;    /* 上邊距 0，其他各10px */
+      background-color: #C2A588;    /* 與整頁背景統一 */
       z-index: 1000;
     }
+    
+    /* 3. LOGO 的樣式 */
     .logo {
-      width: 150px; height: auto;
+      width: 150px;
+      height: auto;
+      display: block;
+      border: none;               /* 移除邊框 */
     }
+    
+    /* 4. 新增：header 旁邊的標題文字 */
     .header-title {
-      margin-left: 10px;
-      font-size: 24px; font-weight: bold;
+      margin-left: 10px;          /* 與 LOGO 之間的間距 */
+      font-size: 24px;
+      font-weight: bold;
     }
-
-    /* 主內容區域 */
+    
+    /* 5. 主內容區域，留出 header 高度以防遮蓋 */
     main {
       margin: 70px 20px 20px 20px;
     }
-
-    /* 讓內容在右側的設定 */
+    
+    /* 6. 中央內容區域：調整向右對齊且確保堆疊順序 */
     .center-content {
-      text-align: right; /* 關鍵：向右對齊 */
+      text-align: right;          /* 向右對齊所有內部元素 */
       margin: 20px;
+      position: relative;         /* 建立定位上下文 */
+      z-index: 10;                /* 確保浮在背景上 */
     }
-    /* 你可以加上想要的圖片樣式，如果需要 */
-    /* .center-content img {
-       ...
-    } */
+    
+    /* 7. 新增：將圖片與文字合併到同一個連結中，連結樣式保持預設 */
+    .center-content a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .center-content img {
+      width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
+  <!-- header 區域：包含 LOGO 與新增的標題文字 -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
-    <h1 class="header-title">歡迎來到我 Blog</h1>
+    <h1 class="header-title">歡迎來到我的Blog</h1>
   </header>
+  
+  <!-- 主內容區 -->
   <main>
     <h2>這裡是最新的影評內容...</h2>
     
+    <!-- 中央內容區：圖片與文字以同一連結存在，向右對齊 -->
     <div class="center-content">
-      <!-- 把圖片與文字都放在同一個 <a> 裏面 -->
       <a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank">
-        <img src="mqdefault.jpg.jpg" alt="我的英雄學院" width="300"><br>
+        <img src="mqdefault.jpg.jpg" alt="我的英雄學院">
+        <br>
         Netfilx影評, 關於影集所帶給我的人生觀
       </a>
     </div>
