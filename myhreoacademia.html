@@ -3,47 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>關於我從Netfilx影集學到的事</title>
+  <title>我的影評網站</title>
   <style>
-    /* 1. 讓整個頁面都是奶茶色 */
+    /* 重置瀏覽器預設邊距與設定頁面整體背景色、字體 */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #C2A588; /* 奶茶色 */
-      color: #2E2E2E;
+      background-color: #C2A588; /* 奶茶色背景 */
+      color: #2E2E2E;         /* 深灰字體 */
       font-family: "Arial", sans-serif;
     }
-
-    /* 2. 將 header 置頂，並讓它背景也為奶茶色 */
+    
+    /* 固定置頂的 header 區域設定
+       - 使用 position: fixed 將 header 固定在頁面頂部
+       - 使用 Flexbox 讓裡面的內容（水平方向）排列 */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 0 10px 10px 10px;
-      background-color: #C2A588; 
-      /* 如果不想陰影，就註解掉下面這行 */
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      z-index: 1000;
+      display: flex;              
+      align-items: center;        /* 垂直置中 */
+      padding: 0 10px 10px 10px;   /* 上邊距 0，右下左各 10px */
+      background-color: #f0f0f0;    /* header 背景色，可視情況調整 */
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* header 下方陰影效果 */
+      z-index: 1000;              /* 確保 header 位於最上層 */
     }
 
-    /* 3. LOGO 設定 */
+    /* 設定 logo 的樣式 */
     .logo {
-      width: 150px;
-      height: auto;
-      display: block; /* 避免 inline 元素產生底部空白 */
-      border: none;   /* 確保無邊框 */
+      width: 150px;             /* LOGO 寬度 150px */
+      height: auto;             /* 高度自動，保持原比例 */
+      display: block;           /* 避免 inline 元素產生底部間隙 */
+      border: none;             /* 移除邊框 */
     }
 
-    /* 4. main 區塊，預留 header 的高度 (約 70px) */
+    /* 新增：header 旁邊的標題文字區
+       - 將這部分放在 LOGO 右邊，透過 margin-left 與 LOGO 保持間距 */
+    .header-title {
+      margin-left: 10px;        /* LOGO 與文字之間的間距 */
+      font-size: 24px;          /* 文字大小 */
+      font-weight: bold;        /* 文字加粗 */
+    }
+    
+    /* 主內容區域設定：為了不被固定的 header 蓋住，
+       在 main 上方留白，margin-top 根據 header 高度調整 */
     main {
       margin: 70px 20px 20px 20px;
-      /* 因為 body 已經是奶茶色，所以這裡可不再指定背景 */
     }
-
+    
+    /* 中央內容區域設定範例 */
     .center-content {
       text-align: center;
       margin: 20px;
@@ -57,14 +66,18 @@
   </style>
 </head>
 <body>
+  <!-- header 區域，新增的部分是 header-title -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
+    <!-- 新增：在 LOGO 旁邊加入文字 -->
+    <h1 class="header-title">歡迎來到我 Blog</h1>
   </header>
-
+  
+  <!-- 主內容區 -->
   <main>
-    <h1>WELCOME MY BLOG</h1>
-    <p>這裡是最新的影評內容...</p>
-
+    <h2>這裡是最新的影評內容...</h2>
+    
+    <!-- 示範中央內容區 -->
     <div class="center-content">
       <img src="mqdefault.jpg.jpg" alt="我的英雄學院">
       <p>
@@ -76,3 +89,4 @@
   </main>
 </body>
 </html>
+
