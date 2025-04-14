@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的影評網站</title>
   <style>
-    /* 統一頁面背景與字型 */
+    /* 1. 統一頁面背景與字體設定 */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #C2A588;
-      color: #2E2E2E;
+      background-color: #C2A588; /* 奶茶色背景 */
+      color: #2E2E2E;          /* 深灰字體 */
       font-family: "Arial", sans-serif;
     }
     
-    /* 固定在左側的選單 */
+    /* 2. 固定在右側的選單 */
     nav {
       position: fixed;
       top: 0;
-      left: 0;
-      width: 200px;         /* 選單區塊寬度，可依需要調整 */
-      height: 100%;         /* 撐滿整個視窗高度 */
-      background-color: #C2A588;  /* 與頁面背景色相同或可另外設定 */
+      right: 0;                /* 從右邊開始 */
+      width: 200px;            /* 選單區塊寬度 */
+      height: 100%;            /* 撐滿整個視窗高度 */
+      background-color: #C2A588; /* 與整頁背景統一 */
       padding: 20px;
       box-sizing: border-box;
     }
@@ -42,40 +42,42 @@
       font-size: 18px;
     }
     
-    /* header 區塊：固定置頂，排在選單右側 */
+    /* 3. Header 區塊，調整 header 的右邊距以避開右側選單 */
     header {
       position: fixed;
       top: 0;
-      left: 200px; /* 讓 header 往右推，避免被選單覆蓋 */
-      right: 0;
+      left: 0;
+      right: 200px;             /* header 右側留下選單寬度 */
       display: flex;
-      align-items: center;
-      padding: 0 10px 10px 10px;
-      background-color: #C2A588;
+      align-items: center;      /* 讓內容垂直置中 */
+      padding: 0 10px 10px 10px; /* 上邊距為 0，其它各 10px */
+      background-color: #C2A588; /* 背景色與整頁統一 */
       z-index: 1000;
     }
     
     .logo {
-      width: 150px;
-      height: auto;
+      width: 150px;           /* LOGO 寬度 */
+      height: auto;           /* 高度隨比例自動調整 */
       display: block;
       border: none;
     }
     
     .header-title {
-      margin-left: 10px;
+      margin-left: 10px;      /* 與 LOGO 之間的間距 */
       font-size: 24px;
       font-weight: bold;
     }
     
-    /* 主內容區域，讓內容從選單與 header 下方開始 */
+    /* 4. 主內容區域，調整 left 與 right 的 margin，避開 header 與右側選單 */
     main {
-      margin: 70px 20px 20px 220px; /* 左邊加 220px 以避開選單 (200px + 20px 外邊距) */
+      margin: 70px 220px 20px 20px; 
+      /* 上 70px 讓 header 空出；右側 220px (200px + 20px 外邊距) 避開選單 */
       background-color: #C2A588;
     }
     
+    /* 5. 中央內容區：圖片與連結合併並向右對齊 */
     .center-content {
-      text-align: right;
+      text-align: right;         /* 向右對齊 */
       margin: 20px;
       position: relative;
       z-index: 10;
@@ -95,7 +97,7 @@
   </style>
 </head>
 <body>
-  <!-- 左側選單 -->
+  <!-- 右側選單 -->
   <nav>
     <ul>
       <li><a href="index.html">首頁</a></li>
@@ -103,7 +105,7 @@
     </ul>
   </nav>
   
-  <!-- header 區域 -->
+  <!-- header 區域：包含 LOGO 與標題文字，header 右側空出給選單 -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我 Blog</h1>
@@ -113,7 +115,9 @@
   <main>
     <h2>這裡是最新的影評內容...</h2>
     <div class="center-content">
+      <!-- 將圖片與文字放在同一個連結內，點擊圖片或文字皆能前往連結 -->
       <a href="https://youtu.be/rlRSJNHS40s?si=8yF7GkK-tXaGsNhq" target="_blank">
+        <img src="mqdefault.jpg.jpg" alt="我的英雄學院">
         <br>
         Netfilx影評, 關於影集所帶給我的人生觀
       </a>
