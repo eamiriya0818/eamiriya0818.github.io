@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我在Netfilx上學到的人生觀</title>
+
+  <!-- 0. 引入 Google Fonts 的日式復古字體（Noto Serif JP） -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+
   <style>
     /* 1. 統一頁面背景與字體設定 */
     html, body {
       margin: 0;
       padding: 0;
       background-color: #C2A588; /* 奶茶色背景 */
-      color: #EA7500;            /* 字體顏色為橘色 */
+      color: #EA7500;            /* 預設文字顏色 */
       font-family: "Arial", sans-serif;
     }
 
@@ -18,10 +22,10 @@
     nav {
       position: fixed;
       top: 0;
-      right: 0;                /* 靠右對齊 */
-      width: 200px;            /* 寬度固定 */
-      height: 100%;            /* 撐滿整個視窗高度 */
-      background-color: #C2A588; /* 背景與整體統一 */
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #C2A588;
       padding: 20px;
       box-sizing: border-box;
     }
@@ -42,13 +46,13 @@
       font-size: 18px;
     }
 
-    /* 3. 頁首 header 區塊 */
+    /* 3. Header 區塊：固定在最上方，包含 LOGO、標題與紅字訊息 */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 200px;          /* 預留右側選單寬度 */
-      height: 120px;         /* 固定高度，避免擠壓內容 */
+      height: 120px;         /* 固定高度 */
       background-color: #C2A588;
       z-index: 1000;
     }
@@ -68,21 +72,22 @@
       font-weight: bold;
     }
 
-    /* 4. 紅色文字：完全置中浮在 header 中間 + 閃爍動畫 */
+    /* 4. 完全置中的紅色字體：使用日式復古字體 + 閃爍效果 */
     .blog-message {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); /* 精準置中 */
+      transform: translate(-50%, -50%);       /* 完全置中對齊 */
       color: red;
-      font-size: 20px;
+      font-size: 32px;                        /* 字體變大更顯眼 */
       font-weight: bold;
-      animation: blink 1s infinite;     /* 每秒閃爍一次 */
-      white-space: nowrap;              /* 防止換行 */
+      font-family: 'Noto Serif JP', serif;    /* 日式復古風字體 */
+      animation: blink 1s infinite;           /* 每秒閃爍一次 */
+      white-space: nowrap;                    /* 不要自動換行 */
       z-index: 1001;
     }
 
-    /* 5. 閃爍動畫定義 */
+    /* 5. 閃爍動畫效果定義 */
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
@@ -94,7 +99,7 @@
       background-color: #C2A588;
     }
 
-    /* 7. 內容置右：圖片與連結組合用 */
+    /* 7. 中央內容區：圖片與連結置右對齊 */
     .center-content {
       text-align: right;
       margin: 20px;
@@ -116,7 +121,7 @@
   </style>
 </head>
 <body>
-  <!-- 右側選單 -->
+  <!-- 右側選單：可連結到其他頁面 -->
   <nav>
     <ul>
       <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
@@ -124,7 +129,7 @@
     </ul>
   </nav>
 
-  <!-- header 區域：包含 Logo、標題與紅字 -->
+  <!-- Header 區域：LOGO、標題與置中的紅色文字 -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我的Blog</h1>
@@ -132,3 +137,4 @@
   </header>
 </body>
 </html>
+
