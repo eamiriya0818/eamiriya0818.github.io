@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我在Netfilx上學到的人生觀</title>
 
+  <!-- 引入 Bootstrap CSS & JS（供下拉選單使用） -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <style>
     /* 1. 統一頁面背景與字體設定 */
     html, body {
@@ -15,46 +19,17 @@
       font-family: "Arial", sans-serif;
     }
 
-    /* 2. 固定在右側的選單區塊 */
-    nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      background-color: #C2A588;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav li {
-      margin-bottom: 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #2E2E2E;
-      font-size: 18px;
-    }
-
-    /* 3. Header 區塊：固定在最上方，包含 LOGO、標題與浮動文字 */
+    /* 2. Header 區塊：固定上方，含 LOGO、標題與浮動字 */
     header {
       position: fixed;
-      top: 0;
+      top: 60px;                    /* 頂部推 60px，避開上方導覽列 */
       left: 0;
-      right: 200px;          /* 預留右側選單寬度 */
-      height: 120px;         /* 固定高度 */
+      right: 200px;
+      height: 120px;
       background-color: #C2A588;
       z-index: 1000;
     }
 
-    /* LOGO 設定 */
     .logo {
       width: 150px;
       height: auto;
@@ -62,41 +37,39 @@
       margin: 10px;
     }
 
-    /* 標題樣式 */
     .header-title {
       margin: 10px;
       font-size: 24px;
       font-weight: bold;
     }
 
-    /* 4. 置中顯示的浮動字：使用 Comic Sans MS 字體與復古色 */
+    /* 3. 中間浮動字體設定：Comic Sans MS + 橘棕 + 閃爍 */
     .blog-message {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);       /* 完全置中 */
-      color: #556B2F;                         /* 柔和復古綠色 */
-      font-size: 100px;                        /* 字體加大 */
+      transform: translate(-50%, -50%);
+      color: #A0522D;                         /* 溫柔橘棕 */
+      font-size: 32px;
       font-weight: bold;
-      font-family: "Comic Sans MS", cursive;  /* Comic Sans MS 字體 */
-      animation: blink 1s infinite;           /* 閃爍動畫 */
+      font-family: "Comic Sans MS", cursive;  /* Comic Sans 字體 */
+      animation: blink 1s infinite;
       white-space: nowrap;
       z-index: 1001;
     }
 
-    /* 5. 閃爍動畫效果 */
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
 
-    /* 6. 主內容區：避開上方 header 與右側選單 */
+    /* 4. 主內容區塊 */
     main {
-      margin: 130px 220px 20px 20px;
+      margin: 200px 220px 20px 20px; /* 頂部預留 header + 下拉列 */
       background-color: #C2A588;
     }
 
-    /* 7. 內容區塊：右對齊圖片與連結 */
+    /* 5. 中央內容：可放圖片或區塊 */
     .center-content {
       text-align: right;
       margin: 20px;
@@ -115,22 +88,84 @@
       display: block;
       margin: 0 auto;
     }
+
+    /* 6. 固定在右側的選單區塊 */
+    nav.side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #C2A588;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    nav.side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav.side-menu li {
+      margin-bottom: 15px;
+    }
+
+    nav.side-menu a {
+      text-decoration: none;
+      color: #2E2E2E;
+      font-size: 18px;
+    }
+
+    /* 7. 下拉選單 hover 效果與動畫 */
+    .side-menu .nav-item.dropdown:hover .dropdown-menu {
+      display: block !important;
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 8. 下拉選單項目的 hover 背景顏色 */
+    .dropdown-item:hover {
+      background-color: #EBD4A2;
+      color: #2E2E2E;
+    }
   </style>
 </head>
 <body>
-  <!-- 右側選單 -->
-  <nav>
-    <ul>
-      <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
-      <li><a href="article.html">我的影評</a></li>
-    </ul>
-  </nav>
 
-  <!-- 頁首 Header：LOGO、標題與中心浮動字 -->
+  <!-- 1. Header 區塊：LOGO、標題與中間浮動文字 -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我的Blog</h1>
     <p class="blog-message">這是我的 Blog</p>
   </header>
+
+  <!-- 2. 右側選單（含下拉選單與 hover 效果） -->
+  <nav class="side-menu">
+    <ul>
+      <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
+      <li><a href="article.html">文章</a></li>
+
+      <!-- Bootstrap 下拉選單區塊 -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false" style="font-size: 18px; color: #2E2E2E; padding-left: 0;">
+          更多選項
+        </a>
+        <ul class="dropdown-menu show"
+            style="position: static; float: none; display: none; background-color: #F5E5C0; border: none;">
+          <li><a class="dropdown-item" href="#">動作一</a></li>
+          <li><a class="dropdown-item" href="#">動作二</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="about.html">關於我</a></li>
+          <li><a class="dropdown-item" href="favorites.html">收藏頁</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </body>
 </html>
