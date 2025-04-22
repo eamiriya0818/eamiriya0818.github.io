@@ -10,88 +10,103 @@
       margin: 0;
       padding: 0;
       background-color: #C2A588; /* 奶茶色背景 */
-      color: #EA7500;          /* 字體 */
+      color: #EA7500;            /* 字體顏色為橘色 */
       font-family: "Arial", sans-serif;
     }
-    <body>
-    <header>
-        <h1>關於我從netfilx學到的人生觀</h1>
-    </header>
-    
-    /* 2. 固定在右側的選單 */
+
+    /* 2. 固定在右側的選單區塊 */
     nav {
       position: fixed;
       top: 0;
-      right: 0;                /* 從右邊開始 */
-      width: 200px;            /* 選單區塊寬度 */
+      right: 0;                /* 靠右對齊 */
+      width: 200px;            /* 寬度固定 */
       height: 100%;            /* 撐滿整個視窗高度 */
-      background-color: #C2A588; /* 與整頁背景統一 */
+      background-color: #C2A588; /* 背景與整體統一 */
       padding: 20px;
       box-sizing: border-box;
     }
-    
+
     nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    
+
     nav li {
       margin-bottom: 15px;
     }
-    
+
     nav a {
       text-decoration: none;
       color: #2E2E2E;
       font-size: 18px;
     }
-    
-    /* 3. Header 區塊，調整 header 的右邊距以避開右側選單 */
+
+    /* 3. 頁首 header 區塊 */
     header {
       position: fixed;
       top: 0;
       left: 0;
-      right: 200px;             /* header 右側留下選單寬度 */
-      display: flex;
-      align-items: center;      /* 讓內容垂直置中 */
-      padding: 0 10px 10px 10px; /* 上邊距為 0，其它各 10px */
-      background-color: #C2A588; /* 背景色與整頁統一 */
+      right: 200px;          /* 預留右側選單寬度 */
+      height: 120px;         /* 固定高度，避免擠壓內容 */
+      background-color: #C2A588;
       z-index: 1000;
     }
-    
+
+    /* LOGO 設定 */
     .logo {
-      width: 150px;           /* LOGO 寬度 */
-      height: auto;           /* 高度隨比例自動調整 */
+      width: 150px;
+      height: auto;
       display: block;
-      border: none;
+      margin: 10px;
     }
-    
+
+    /* 標題樣式設定 */
     .header-title {
-      margin-left: 10px;      /* 與 LOGO 之間的間距 */
+      margin: 10px;
       font-size: 24px;
       font-weight: bold;
     }
-    
-    /* 4. 主內容區域，調整 left 與 right 的 margin，避開 header 與右側選單 */
+
+    /* 4. 紅色文字：完全置中浮在 header 中間 + 閃爍動畫 */
+    .blog-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* 精準置中 */
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+      animation: blink 1s infinite;     /* 每秒閃爍一次 */
+      white-space: nowrap;              /* 防止換行 */
+      z-index: 1001;
+    }
+
+    /* 5. 閃爍動畫定義 */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* 6. 主內容區塊（避開 header 與右選單） */
     main {
-      margin: 70px 220px 20px 20px; 
-      /* 上 70px 讓 header 空出；右側 220px (200px + 20px 外邊距) 避開選單 */
+      margin: 130px 220px 20px 20px;
       background-color: #C2A588;
     }
-    
-    /* 5. 中央內容區：圖片與連結合併並向右對齊 */
+
+    /* 7. 內容置右：圖片與連結組合用 */
     .center-content {
-      text-align: right;         /* 向右對齊 */
+      text-align: right;
       margin: 20px;
       position: relative;
       z-index: 10;
     }
-    
+
     .center-content a {
       text-decoration: none;
       color: inherit;
     }
-    
+
     .center-content img {
       width: 300px;
       height: auto;
@@ -101,21 +116,19 @@
   </style>
 </head>
 <body>
-  <!-- 右側選單，修改部分在這裡 -->
+  <!-- 右側選單 -->
   <nav>
     <ul>
-      <!-- 修改：首頁連結更新成指定網址 -->
       <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
       <li><a href="article.html">文章</a></li>
     </ul>
   </nav>
-  
-  <!-- header 區域：包含 LOGO 與標題文字 -->
-  <header>
-  <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
-  <h1 class="header-title">歡迎來到我的Blog</h1>
-  <p class="blog-message">這是我的 Blog</p>
-</header>
 
+  <!-- header 區域：包含 Logo、標題與紅字 -->
+  <header>
+    <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
+    <h1 class="header-title">歡迎來到我的Blog</h1>
+    <p class="blog-message">這是我的 Blog</p>
+  </header>
 </body>
 </html>
