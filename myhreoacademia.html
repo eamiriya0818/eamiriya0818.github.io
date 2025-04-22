@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我在Netfilx上學到的人生觀</title>
 
-  <!-- 0. 引入 Google Fonts 的日式復古字體（Noto Serif JP） -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
-
   <style>
     /* 1. 統一頁面背景與字體設定 */
     html, body {
@@ -46,7 +43,7 @@
       font-size: 18px;
     }
 
-    /* 3. Header 區塊：固定在最上方，包含 LOGO、標題與紅字訊息 */
+    /* 3. Header 區塊：固定在最上方，包含 LOGO、標題與浮動文字 */
     header {
       position: fixed;
       top: 0;
@@ -65,41 +62,41 @@
       margin: 10px;
     }
 
-    /* 標題樣式設定 */
+    /* 標題樣式 */
     .header-title {
       margin: 10px;
       font-size: 24px;
       font-weight: bold;
     }
 
-    /* 4. 完全置中的紅色字體：使用日式復古字體 + 閃爍效果 */
+    /* 4. 置中顯示的浮動字：使用 Comic Sans MS 字體與復古色 */
     .blog-message {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);       /* 完全置中對齊 */
-      color: red;
-      font-size: 100px;                        /* 字體變大更顯眼 */
+      transform: translate(-50%, -50%);       /* 完全置中 */
+      color: #A0522D;                         /* 柔和復古橘棕色 */
+      font-size: 32px;                        /* 字體加大 */
       font-weight: bold;
-      font-family: 'Noto Serif JP', serif;    /* 日式復古風字體 */
-      animation: blink 2s infinite;           /* 每秒閃爍一次 */
-      white-space: nowrap;                    /* 不要自動換行 */
+      font-family: "Comic Sans MS", cursive;  /* Comic Sans MS 字體 */
+      animation: blink 1s infinite;           /* 閃爍動畫 */
+      white-space: nowrap;
       z-index: 1001;
     }
 
-    /* 5. 閃爍動畫效果定義 */
+    /* 5. 閃爍動畫效果 */
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
 
-    /* 6. 主內容區塊（避開 header 與右選單） */
+    /* 6. 主內容區：避開上方 header 與右側選單 */
     main {
       margin: 130px 220px 20px 20px;
       background-color: #C2A588;
     }
 
-    /* 7. 中央內容區：圖片與連結置右對齊 */
+    /* 7. 內容區塊：右對齊圖片與連結 */
     .center-content {
       text-align: right;
       margin: 20px;
@@ -121,7 +118,7 @@
   </style>
 </head>
 <body>
-  <!-- 右側選單：可連結到其他頁面 -->
+  <!-- 右側選單 -->
   <nav>
     <ul>
       <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
@@ -129,7 +126,7 @@
     </ul>
   </nav>
 
-  <!-- Header 區域：LOGO、標題與置中的紅色文字 -->
+  <!-- 頁首 Header：LOGO、標題與中心浮動字 -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我的Blog</h1>
@@ -137,4 +134,3 @@
   </header>
 </body>
 </html>
-
