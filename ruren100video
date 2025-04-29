@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黑鏡人生觀 - 我的影評</title> <!-- 頁面標題 -->
+  <title>黑鏡人生觀 - 心得</title>
   <style>
     body {
       font-family: "Arial", sans-serif;
-      background-color: #F5E5C0; /* 奶茶色底 */
+      background-color: #F5E5C0;
       color: #4E3E2A;
       margin: 30px;
       line-height: 1.8;
@@ -24,12 +24,11 @@
 </head>
 
 <body>
-  <h1>黑鏡人生觀</h1> <!-- 心得標題 -->
+  <h1>黑鏡人生觀</h1>
   <p>
-    在《黑鏡》的世界中，科技放大了人性的光明與黑暗……<br>
-    這部作品讓我思考了虛擬世界與真實人生的界線。
+    在《黑鏡》的世界中，科技放大了人性的光明與黑暗。這部作品讓我深刻反思了虛擬世界與真實人生的界線……
   </p>
 
-  <a href="index.html">← 回首頁</a> <!-- 加個回首頁連結 -->
+  <a href="index.html">← 回首頁</a>
 </body>
 </html>
