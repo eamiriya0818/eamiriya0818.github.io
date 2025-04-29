@@ -1,34 +1,61 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
+<!DOCTYPE html> <!-- HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 語言設定為繁體中文 -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>黑鏡人生觀 - 心得</title>
+  <meta charset="UTF-8"> <!-- 字元編碼設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式支援 -->
+  <title>黑鏡人生觀 - 心得</title> <!-- 頁籤標題 -->
   <style>
     body {
-      font-family: "Arial", sans-serif;
-      background-color: #F5E5C0;
-      color: #4E3E2A;
+      font-family: "Arial", sans-serif; /* 預設字體 */
+      background-color: #F5E5C0; /* 奶茶色背景 */
+      color: #4E3E2A; /* 文字深咖啡色 */
       margin: 30px;
       line-height: 1.8;
     }
     h1 {
-      color: #A0522D;
-      font-family: "Comic Sans MS", cursive;
+      color: #A0522D; /* 標題橘棕色 */
+      font-family: "Comic Sans MS", cursive; /* 標題字體 */
     }
+    /* 普通超連結設定 */
     a {
       color: #A0522D;
       text-decoration: none;
+    }
+    /* 回首頁按鈕設定 */
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #A0522D;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: "Comic Sans MS", cursive;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    /* 滑鼠移上按鈕效果 */
+    .back-button:hover {
+      background-color: #8B3A3A; /* 深紅棕色 */
     }
   </style>
 </head>
 
 <body>
+  <!-- 心得標題 -->
   <h1>黑鏡人生觀</h1>
+
+  <!-- 心得內容 -->
   <p>
-    在《黑鏡》的世界中，科技放大了人性的光明與黑暗。這部作品讓我深刻反思了虛擬世界與真實人生的界線……
+    在《黑鏡》的世界中，科技放大了人性的光明與黑暗。<br>
+    這部作品讓我深刻反思了虛擬世界與真實人生的界線……
   </p>
 
-  <a href="index.html">← 回首頁</a>
+  <!-- 回首頁按鈕（用按鈕樣式的超連結） -->
+  <div style="text-align: center;"> <!-- 按鈕置中 -->
+    <a href="index.html" class="back-button">← 回首頁</a>
+  </div>
+
 </body>
 </html>
