@@ -1,68 +1,92 @@
-<!DOCTYPE html> <!-- 宣告 HTML5 文件 -->
+<!DOCTYPE html> <!-- HTML5 文件 -->
 <html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
 <head>
-  <meta charset="UTF-8"> <!-- 設定字元編碼為 UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式支援 -->
-  <title>黑鏡人生觀 - 心得</title> <!-- 頁籤標題 -->
+  <meta charset="UTF-8"> <!-- 字元編碼設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式 -->
+  <title>黑鏡人生觀 - 心得</title> <!-- 頁面標題 -->
   <style>
     /* === 頁面基本設定 === */
     body {
-      font-family: "Arial", sans-serif; /* 預設字體 */
-      background-color: #F5E5C0; /* 奶茶色背景 */
-      color: #4E3E2A; /* 文字深咖啡色 */
-      margin: 30px; /* 四周留空間 */
-      line-height: 1.8; /* 行距 */
+      font-family: "Arial", sans-serif;
+      background-color: #F5E5C0;
+      color: #4E3E2A;
+      margin: 30px;
+      line-height: 1.8;
     }
 
-    /* === 標題設定 === */
+    /* === 文章標題設定 === */
     h1 {
-      color: #A0522D; /* 標題文字橘棕色 */
-      font-family: "Comic Sans MS", cursive; /* Comic Sans 字體 */
+      color: #A0522D;
+      font-family: "Comic Sans MS", cursive;
     }
 
     /* === 普通超連結設定（備用） === */
     a {
-      color: #A0522D; /* 超連結橘棕色 */
-      text-decoration: none; /* 去掉底線 */
+      color: #A0522D;
+      text-decoration: none;
     }
 
-    /* === 回首頁按鈕樣式 === */
-    .back-button {
-      display: inline-block; /* 讓按鈕是行內區塊 */
-      margin-top: 30px; /* 與上方文字留間距 */
-      padding: 10px 20px; /* 內邊距 */
-      background-color: #A0522D; /* 按鈕背景色 */
-      color: white; /* 按鈕文字顏色 */
-      font-size: 18px; /* 字體大小 */
-      border-radius: 8px; /* 圓角 */
-      text-decoration: none; /* 取消底線 */
-      font-family: "Comic Sans MS", cursive; /* Comic Sans 字體 */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 按鈕陰影 */
-      transition: background-color 0.3s ease; /* 滑鼠移上去時有動畫 */
+    /* === 麵包屑導航區塊樣式 === */
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 14px;
     }
 
-    /* === 滑鼠移到按鈕時的變化 === */
-    .back-button:hover {
-      background-color: #8B3A3A; /* 移上去變成深紅棕色 */
+    .breadcrumb a {
+      color: #A0522D;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* === 雙按鈕樣式（回首頁＋回上一頁） === */
+    .button-area {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .action-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #A0522D;
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: "Comic Sans MS", cursive;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .action-button:hover {
+      background-color: #8B3A3A;
     }
   </style>
 </head>
 
 <body>
-  <!-- 心得文章標題 -->
+
+  <!-- 🍞 麵包屑導航 -->
+  <div class="breadcrumb">
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> > 黑鏡人生觀
+  </div>
+
+  <!-- 📄 心得標題 -->
   <h1>黑鏡人生觀</h1>
 
-  <!-- 心得文章內容 -->
+  <!-- 📄 心得內容 -->
   <p>
     在《黑鏡》的世界中，科技放大了人性的光明與黑暗。<br>
     這部作品讓我深刻反思了虛擬世界與真實人生的界線……
   </p>
 
-  <!-- 回首頁按鈕區塊 -->
-  <div style="text-align: center;"> <!-- 讓按鈕置中 -->
-    <a href="https://eamiriya0818.github.io/myhreoacademia.html" 
-       class="back-button" 
-       target="_blank">← 回到我的Hero Academia首頁</a> <!-- 點擊後開新分頁 -->
+  <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
+  <div class="button-area">
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
+    <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
   </div>
 
 </body>
