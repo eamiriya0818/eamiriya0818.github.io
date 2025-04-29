@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式手機支援 -->
   <title>我在Netfilx上學到的人生觀</title> <!-- 頁面標題 -->
 
-  <!-- 引入 Bootstrap（下拉選單需要） -->
+  <!-- 引入 Bootstrap（供下拉選單使用） -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -15,16 +15,16 @@
       margin: 0;
       padding: 0;
       background-color: #C2A588; /* 奶茶色背景 */
-      color: #EA7500;
-      font-family: "Arial", sans-serif;
+      color: #EA7500;            /* 預設文字顏色 */
+      font-family: "Arial", sans-serif; /* 預設字體 */
     }
 
-    /* === 頁首 Header 區塊 === */
+    /* === 頁首 Header 區塊（LOGO＋標題＋浮動文字） === */
     header {
       position: fixed;
-      top: 60px; /* 避開上方導覽列 */
+      top: 60px; /* 避開導覽列 */
       left: 0;
-      right: 200px; /* 避開右側選單 */
+      right: 200px; /* 預留右側選單 */
       height: 120px;
       background-color: #C2A588;
       z-index: 1000;
@@ -43,7 +43,7 @@
       font-weight: bold;
     }
 
-    /* === 中央浮動字（Comic Sans + 橘棕色）=== */
+    /* === 中央浮動文字設定（Comic Sans + 橘棕 + 閃爍動畫） === */
     .blog-message {
       position: absolute;
       top: 50%;
@@ -63,24 +63,49 @@
       50% { opacity: 0; }
     }
 
-    /* === 主內容區：九宮格卡片展示區 === */
+    /* === 主內容區塊（大標題＋九宮格卡片） === */
     main {
-      margin: 200px 220px 20px 20px; /* 避開 header 與右側選單 */
+      margin: 200px 220px 20px 20px;
+      text-align: center; /* 中央對齊 */
     }
 
+    /* 網站介紹文字區塊 */
+    .site-description {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #F5E5C0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      color: #4E3E2A;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* 九宮格卡片容器 */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自動排版 */
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr); /* 每行固定三張 */
+      gap: 20px; /* 卡片間距 */
+      max-width: 1000px;
+      margin: 0 auto; /* 整體置中 */
     }
 
+    /* 卡片本身 */
     .card {
-      background-color: #F5E5C0; /* 卡片背景色 */
+      background-color: #F5E5C0;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       overflow: hidden;
       text-align: center;
       padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* 滑鼠動畫效果 */
+    }
+
+    /* 滑鼠移上卡片時放大＋陰影加深 */
+    .card:hover {
+      transform: scale(1.05); /* 放大5% */
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
 
     .card img {
@@ -102,7 +127,7 @@
       color: #4E3E2A;
     }
 
-    /* === 右側選單樣式 === */
+    /* === 右側選單（包含下拉選單 hover 效果） === */
     nav.side-menu {
       position: fixed;
       top: 0;
@@ -130,7 +155,6 @@
       font-size: 18px;
     }
 
-    /* === 右側下拉選單 hover 展開效果 === */
     .side-menu .nav-item.dropdown:hover .dropdown-menu {
       display: block !important;
       animation: fadeIn 0.4s ease-in;
@@ -150,14 +174,14 @@
 
 <body>
 
-  <!-- 頁首 -->
+  <!-- 頁首（LOGO＋標題＋閃爍字） -->
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我的Blog</h1>
     <p class="blog-message">這是我的 Blog</p>
   </header>
 
-  <!-- 右側選單（包含下拉式選單） -->
+  <!-- 右側選單（含下拉） -->
   <nav class="side-menu">
     <ul>
       <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
@@ -179,10 +203,17 @@
     </ul>
   </nav>
 
-  <!-- 主內容區塊：卡片九宮格 -->
+  <!-- 主內容區塊：網站介紹 ＋ 九宮格卡片 -->
   <main>
+    <div class="site-description">
+      <h2>關於這個網站</h2>
+      <p>
+        這是一個由我親手設計的影評分享平台，結合個人觀點、人生體悟與喜歡的影集心得。
+        無論你是影劇迷、語言學習者，還是只想找個地方看看世界，我都希望你能在這裡找到共鳴。
+      </p>
+    </div>
+
     <div class="card-grid">
-      <!-- 每張卡片 -->
       <div class="card">
         <img src="https://source.unsplash.com/featured/?movie" alt="文章圖片1">
         <h3>黑鏡人生觀</h3>
