@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑鏡人生觀 - 我的影評</title> <!-- 頁面標題 -->
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #F5E5C0; /* 奶茶色底 */
+      color: #4E3E2A;
+      margin: 30px;
+      line-height: 1.8;
+    }
+    h1 {
+      color: #A0522D;
+      font-family: "Comic Sans MS", cursive;
+    }
+    a {
+      color: #A0522D;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>黑鏡人生觀</h1> <!-- 心得標題 -->
+  <p>
+    在《黑鏡》的世界中，科技放大了人性的光明與黑暗……<br>
+    這部作品讓我思考了虛擬世界與真實人生的界線。
+  </p>
+
+  <a href="index.html">← 回首頁</a> <!-- 加個回首頁連結 -->
+</body>
+</html>
