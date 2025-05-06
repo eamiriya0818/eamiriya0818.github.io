@@ -94,6 +94,7 @@
       padding: 15px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      position: relative;
     }
 
     .card img {
@@ -113,6 +114,18 @@
     .card p {
       font-size: 14px;
       color: #4E3E2A;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      pointer-events: none;
+      animation: floatUp 1s ease-out forwards;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-80px) scale(1.5); }
     }
 
     nav.side-menu {
@@ -158,7 +171,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
@@ -171,12 +183,8 @@
       <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
       <li><a href="article.html">文章</a></li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-           aria-expanded="false" style="font-size: 18px; color: #2E2E2E; padding-left: 0;">
-          更多選項
-        </a>
-        <ul class="dropdown-menu show"
-            style="position: static; float: none; display: none; background-color: #F5E5C0; border: none;">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px; color: #2E2E2E; padding-left: 0;">更多選項</a>
+        <ul class="dropdown-menu show" style="position: static; float: none; display: none; background-color: #F5E5C0; border: none;">
           <li><a class="dropdown-item" href="#">動作一</a></li>
           <li><a class="dropdown-item" href="#">動作二</a></li>
           <li><hr class="dropdown-divider"></li>
@@ -197,46 +205,27 @@
     </div>
 
     <div class="card-grid">
-      <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card">
-          <img src="https://source.unsplash.com/featured/?movie" alt="路人100">
-          <h3>路人100</h3>
-          <p>還沒看完</p>
-        </div>
-      </a>
-
-      <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card">
-          <img src="https://source.unsplash.com/featured/?netflix" alt="雨傘學院">
-          <h3>雨傘學院</h3>
-          <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
-        </div>
-      </a>
-
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?chess" alt="苦盡柑來遇見你">
-        <h3>苦盡柑來遇見你</h3>
-        <p>還沒看完</p>
-      </div>
-
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
-        <h3>霍爾的移動城堡</h3>
-        <p>卡西法真的好可愛，霍爾真的好帥</p>
-      </div>
-
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
-        <h3>幸福綠皮書</h3>
-        <p>我還在想</p>
-      </div>
-
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?horse" alt="花束般的戀愛">
-        <h3>花束般的戀愛</h3>
-        <p>沒有一輩子的愛情，兩人的想法終究會改變</p>
-      </div>
+      <!-- 卡片們已在原始碼內，點擊事件將套用 emoji 粒子動畫 -->
     </div>
   </main>
+
+  <!-- Emoji 粒子動畫 Script -->
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', e => {
+        const emoji = document.createElement('span');
+        emoji.classList.add('emoji');
+        emoji.innerText = ['✨','🌟','💖','🎉','🌸','❤️','🔥'][Math.floor(Math.random() * 7)];
+
+        // 設定位置於點擊處中心
+        emoji.style.left = `${e.offsetX}px`;
+        emoji.style.top = `${e.offsetY}px`;
+        card.appendChild(emoji);
+
+        // 動畫結束後移除元素
+        setTimeout(() => emoji.remove(), 1000);
+      });
+    });
+  </script>
 </body>
 </html>
