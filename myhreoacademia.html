@@ -22,7 +22,7 @@
       position: fixed;
       top: 60px;
       left: 0;
-      right: 200px;
+      right: 0;
       height: 120px;
       background-color: #C2A588;
       z-index: 1000;
@@ -61,7 +61,7 @@
     }
 
     main {
-      margin: 200px 220px 20px 20px;
+      margin: 240px 20px 20px 20px;
       text-align: center;
     }
 
@@ -132,48 +132,6 @@
       0% { opacity: 1; transform: translateY(0); }
       100% { opacity: 0; transform: translateY(-80px) scale(1.5); }
     }
-
-    nav.side-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      background-color: #C2A588;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    nav.side-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav.side-menu li {
-      margin-bottom: 15px;
-    }
-
-    nav.side-menu a {
-      text-decoration: none;
-      color: #2E2E2E;
-      font-size: 18px;
-    }
-
-    .side-menu .nav-item.dropdown:hover .dropdown-menu {
-      display: block !important;
-      animation: fadeIn 0.4s ease-in;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .dropdown-item:hover {
-      background-color: #EBD4A2;
-      color: #2E2E2E;
-    }
   </style>
 </head>
 <body>
@@ -181,24 +139,26 @@
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我的Blog</h1>
     <p class="blog-message">這是我的 Blog</p>
-  </header>
 
-  <nav class="side-menu">
-    <ul>
-      <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">首頁</a></li>
-      <li><a href="article.html">文章</a></li>
+    <!-- Bootstrap Pills 下拉式選單 -->
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">首頁</a>
+      </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px; color: #2E2E2E; padding-left: 0;">更多選項</a>
-        <ul class="dropdown-menu show" style="position: static; float: none; display: none; background-color: #F5E5C0; border: none;">
-          <li><a class="dropdown-item" href="#">動作一</a></li>
-          <li><a class="dropdown-item" href="#">動作二</a></li>
-          <li><hr class="dropdown-divider"></li>
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">更多選項</a>
+        <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="about.html">關於我</a></li>
           <li><a class="dropdown-item" href="favorites.html">收藏頁</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">其他</a></li>
         </ul>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="article.html">文章</a>
+      </li>
     </ul>
-  </nav>
+  </header>
 
   <main>
     <div class="site-description">
@@ -212,7 +172,7 @@
     <div class="card-grid">
       <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration: none; color: inherit; display: block;">
         <div class="card">
-          <img src="路人.jpg" alt="路人100">
+          <img src="https://source.unsplash.com/featured/?movie" alt="路人100">
           <h3>路人100</h3>
           <p>還沒看完</p>
         </div>
@@ -220,28 +180,28 @@
 
       <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration: none; color: inherit; display: block;">
         <div class="card">
-          <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
+          <img src="https://source.unsplash.com/featured/?netflix" alt="雨傘學院">
           <h3>雨傘學院</h3>
           <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
         </div>
       </a>
 
       <div class="card">
-        <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
+        <img src="https://source.unsplash.com/featured/?chess" alt="苦盡柑來遇見你">
         <h3>苦盡柑來遇見你</h3>
         <p>還沒看完</p>
       </div>
 
       <div class="card">
-        <img src="霍爾.jpg" alt="霍爾的移動城堡">
+        <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
         <h3>霍爾的移動城堡</h3>
         <p>卡西法真的好可愛，霍爾真的好帥</p>
       </div>
 
       <div class="card">
         <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
-        <h3>星期三</h3>
-        <p>第二季要出了!!!!</p>
+        <h3>幸福綠皮書</h3>
+        <p>我還在想</p>
       </div>
 
       <div class="card">
