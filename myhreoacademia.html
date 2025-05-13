@@ -5,162 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我在Netflix上學到的人生觀</title>
 
-  <!-- 引入 Bootstrap（供下拉選單使用） -->
+  <!-- 引入 Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
-    /* 全域重置與背景、字體 */
     html, body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background-color: #C2A588;
       color: #EA7500;
       font-family: "Arial", sans-serif;
     }
-
-    /* 固定 header */
     header {
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 200px;
-      height: 120px;
-      background-color: #C2A588;
-      z-index: 1000;
+      position: fixed; top: 60px; left: 0; right: 200px;
+      height: 120px; background-color: #C2A588; z-index: 1000;
     }
     .logo {
-      width: 150px;
-      height: auto;
-      display: block;
-      margin: 10px;
+      width: 150px; display: block; margin: 10px;
     }
     .header-title {
-      margin: 10px;
-      font-size: 24px;
-      font-weight: bold;
+      margin: 10px; font-size: 24px; font-weight: bold;
     }
     .blog-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #A0522D;
-      font-size: 60px;
-      font-weight: bold;
-      font-family: "Comic Sans MS", cursive;
-      animation: blink 1s infinite;
-      white-space: nowrap;
-      z-index: 1001;
+      position: absolute; top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      color:#A0522D; font-size:60px; font-weight:bold;
+      font-family:"Comic Sans MS",cursive;
+      animation: blink 1s infinite; white-space:nowrap;
+      z-index:1001;
     }
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      0%,100% { opacity:1; } 50% { opacity:0; }
     }
 
-    /* 主內容區 */
     main {
       margin: 200px 220px 20px 20px;
       text-align: center;
     }
 
-    /* site-description 區塊：加入標楷體 */
     .site-description {
-      max-width: 900px;
-      margin: 30px auto;
-      background-color: #F5E5C0;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      color: #4E3E2A;
-      line-height: 1.7;
-      font-size: 16px;
-      font-family: "標楷體", "DFKai-SB", serif;
+      max-width: 900px; margin:30px auto;
+      background-color:#F5E5C0; padding:20px;
+      border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      color:#4E3E2A; line-height:1.7; font-size:16px;
+      font-family:"標楷體","DFKai-SB",serif;
     }
 
-    /* 卡片排版 */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3,1fr);
+      gap:20px; max-width:1000px; margin:0 auto;
     }
     .card {
-      background-color: #F5E5C0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      overflow: hidden;
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      position: relative;
+      background-color:#F5E5C0; border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+      overflow:hidden; text-align:center; padding:15px;
+      transition:transform .3s,box-shadow .3s;
+      cursor:pointer; position:relative;
     }
     .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transform:scale(1.05);
+      box-shadow:0 4px 16px rgba(0,0,0,0.3);
     }
     .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
+      width:100%; height:180px; object-fit:cover;
+      border-radius:8px;
     }
     .card h3 {
-      margin: 15px 0 10px;
-      font-family: "Comic Sans MS", cursive;
-      color: #A0522D;
-      font-size: 20px;
+      margin:15px 0 10px;
+      font-family:"Comic Sans MS",cursive;
+      color:#A0522D; font-size:20px;
     }
     .card p {
-      font-size: 14px;
-      color: #4E3E2A;
+      font-size:14px; color:#4E3E2A;
     }
     .emoji {
-      position: absolute;
-      font-size: 24px;
-      pointer-events: none;
-      animation: floatUp 1s ease-out forwards;
+      position:absolute; font-size:24px;
+      pointer-events:none;
+      animation:floatUp 1s ease-out forwards;
     }
     @keyframes floatUp {
-      0% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-80px) scale(1.5); }
+      0% { opacity:1; transform:translateY(0); }
+      100% { opacity:0; transform:translateY(-80px) scale(1.5); }
     }
 
-    /* 右側選單 */
     nav.side-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      background-color: #C2A588;
-      padding: 20px;
-      box-sizing: border-box;
+      position:fixed; top:0; right:0; width:200px; height:100%;
+      background-color:#C2A588; padding:20px; box-sizing:border-box;
     }
-    nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
-    nav.side-menu li { margin-bottom: 15px; }
+    nav.side-menu ul { list-style:none; padding:0; margin:0; }
+    nav.side-menu li { margin-bottom:15px; }
     nav.side-menu a {
-      text-decoration: none;
-      color: #2E2E2E;
-      font-size: 18px;
+      text-decoration:none; color:#2E2E2E; font-size:18px;
     }
     .side-menu .nav-item.dropdown:hover .dropdown-menu {
-      display: block !important;
-      animation: fadeIn 0.4s ease-in;
+      display:block!important; animation:fadeIn .4s;
     }
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% { opacity:0; transform:translateY(-10px); }
+      100% { opacity:1; transform:translateY(0); }
     }
     .dropdown-item:hover {
-      background-color: #EBD4A2;
-      color: #2E2E2E;
+      background-color:#EBD4A2; color:#2E2E2E;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
     <h1 class="header-title">歡迎來到我的 Blog</h1>
@@ -175,12 +126,12 @@
       <li><a href="TheUmbrellaAcademy.html">☂️ 雨傘學院</a></li>
       <li><a href="HowlsMovingCastle.html">🏰 霍爾的移動城堡</a></li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-           aria-expanded="false" style="font-size: 18px; color: #2E2E2E; padding-left: 0;">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+           style="font-size:18px;color:#2E2E2E;padding-left:0;">
           📁 看更多文章
         </a>
-        <ul class="dropdown-menu" style="position: static; float: none; background-color: #F5E5C0; border: none;">
-          <li><a class="dropdown-item" href="https://eamiriya0818.github.io/ruren100video.html">📖 路人100心得(暫定)</a></li>
+        <ul class="dropdown-menu" style="position:static;float:none;background:#F5E5C0;border:none;">
+          <li><a class="dropdown-item" href="https://eamiriya0818.github.io/ruren100video.html">📖 路人100心得</a></li>
           <li><a class="dropdown-item" href="favorites.html">🌟 收藏頁</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="#">🔗 其他</a></li>
@@ -203,7 +154,40 @@
     </div>
 
     <div class="card-grid">
-      <!-- 卡片內容略，請保持原樣 -->
+      <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+        <div class="card">
+          <img src="路人.jpg" alt="路人100">
+          <h3>路人100</h3>
+          <p>還沒看完</p>
+        </div>
+      </a>
+      <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+        <div class="card">
+          <img src="雨傘學院.jpg" alt="雨傘學院">
+          <h3>雨傘學院</h3>
+          <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
+        </div>
+      </a>
+      <div class="card">
+        <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
+        <h3>苦盡柑來遇見你</h3>
+        <p>還沒看完</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
+        <h3>霍爾的移動城堡</h3>
+        <p>卡西法真的好可愛，霍爾真的好帥</p>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
+        <h3>幸福綠皮書</h3>
+        <p>我還在想</p>
+      </div>
+      <div class="card">
+        <img src="花束.jpg" alt="花束般的戀愛">
+        <h3>花束般的戀愛</h3>
+        <p>相遇總是藏著別離<br>開始就是結束的開端</p>
+      </div>
     </div>
   </main>
 
