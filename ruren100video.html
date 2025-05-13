@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- HTML5 文件 -->
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -68,7 +68,8 @@
     #comment-form input[type="text"],
     #comment-form textarea,
     #comment-form button,
-    #comment-form input[type="file"] {
+    #comment-form input[type="file"],
+    #comment-form select {                   /* 新增：select 同樣繼承樣式 */
       font-family: inherit;
       font-size: 14px;
       margin-bottom: 8px;
@@ -83,7 +84,7 @@
       padding: 10px;
       margin-top: 12px;
       border-radius: 4px;
-      position: relative;                     /* 新增：定位刪除/編輯/回覆按鈕 */
+      position: relative;                     /* 新增：定位按鈕 */
     }
     .comment-item .meta {
       font-size: 12px;
@@ -149,12 +150,22 @@
     <h2>💬 留言區</h2>
     <form id="comment-form">
       <input type="text" id="commenter" placeholder="你的大名" required>
+
+      <!-- 新增：預設 Avatar 選單 -->
+      <select id="avatar-select">
+        <option value="">── 選擇預設頭像 ──</option>
+        <option value="avatars/avatar1.png">🐱 貓咪</option>
+        <option value="avatars/avatar2.png">🐶 小狗</option>
+        <option value="avatars/avatar3.png">🦊 小狐狸</option>
+      </select>
+
       <!-- 新增：Avatar URL 欄位 -->
-      <input type="text" id="comment-avatar" placeholder="Avatar 圖片 URL（可選）">
+      <input type="text" id="comment-avatar" placeholder="或自行貼上 Avatar URL">
+
       <!-- 新增：圖片上傳欄位 -->
       <input type="file" id="comment-image" accept="image/*">
-      <!-- 新增：預覽圖片 -->
       <img id="image-preview" class="preview" style="display:none;">
+
       <button type="submit">送出</button><br>
       <textarea id="comment-text" placeholder="在這裡留下你的留言…" required></textarea>
     </form>
@@ -164,8 +175,7 @@
 
   <!-- === 新增：留言區 JavaScript 開始 === -->
   <script>
-    // 敏感詞過濾清單（新增）
-    const bannedWords = ['badword1','badword2'];
+    const bannedWords = ['badword1','badword2']; // 新增：敏感詞過濾清單
 
     const form = document.getElementById('comment-form');
     const list = document.getElementById('comments-list');
@@ -173,7 +183,7 @@
     const imagePreview = document.getElementById('image-preview');
     let comments = JSON.parse(localStorage.getItem('comments') || '[]');
 
-    // 圖片預覽（新增）
+    // 新增：圖片預覽
     imageInput.addEventListener('change', () => {
       const file = imageInput.files[0];
       if (!file) return imagePreview.style.display = 'none';
@@ -185,12 +195,12 @@
       reader.readAsDataURL(file);
     });
 
-    // 檢查敏感詞（新增）
+    // 新增：檢查敏感詞
     function containsBanned(text) {
       return bannedWords.some(w => text.includes(w));
     }
 
-    // 渲染留言（含回覆、編輯、刪除功能）
+    // 渲染留言（含回覆、編輯、刪除、Avatar、上傳圖、回覆）
     function renderComments(arr = comments, container = list) {
       container.innerHTML = '';
       arr.forEach((c, idx) => {
@@ -198,13 +208,13 @@
         div.className = 'comment-item';
         div.innerHTML = `
           <div class="meta">
-            <img src="${c.avatar || 'default-avatar.png'}" class="comment-avatar"> 
+            <img src="${c.avatar || 'default-avatar.png'}" class="comment-avatar">
             <strong>${c.name}</strong> • ${new Date(c.time).toLocaleString()}
             <button class="delete-btn" data-index="${idx}">✖</button>
             <button class="edit-btn" data-index="${idx}">✎</button>
             <button class="reply-btn" data-index="${idx}">↩</button>
           </div>
-          <div class="text">${c.text.replace(/\n/g, '<br>')}</div>
+          <div class="text">${c.text.replace(/\n/g,'<br>')}</div>
           ${c.image ? `<img src="${c.image}" style="max-width:150px;margin-top:8px;">` : ''}
           <textarea class="edit-area" data-index="${idx}">${c.text}</textarea>
           <div class="replies" data-index="${idx}"></div>
@@ -264,9 +274,18 @@
       const text = form['comment-text'].value.trim();
       if (!name || !text || containsBanned(text)) return;
       const newC = { name, text, time: Date.now() };
-      const av = form['comment-avatar'].value.trim();
-      if (av) newC.avatar = av;
+
+      // 新增：優先使用下拉選的 Avatar
+      const preset = document.getElementById('avatar-select').value;
+      if (preset) newC.avatar = preset;
+      else {
+        const av = form['comment-avatar'].value.trim();
+        if (av) newC.avatar = av;
+      }
+
+      // 新增：上傳圖片
       if (imagePreview.src) newC.image = imagePreview.src;
+
       comments.unshift(newC);
       if (comments.length > 50) comments.pop();
       form.reset();
