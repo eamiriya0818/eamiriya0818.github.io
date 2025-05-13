@@ -1,9 +1,10 @@
 <!DOCTYPE html> <!-- HTML5 文件 -->
-<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8"> <!-- 字元編碼設定 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>路人100</title> <!-- 頁面標題 -->
+
   <style>
     /* === 頁面基本設定 === */
     body {
@@ -20,23 +21,17 @@
       font-family: "Comic Sans MS", cursive;
     }
 
-    /* === 普通超連結設定（備用） === */
+    /* === 普通超連結設定 === */
     a {
       color: #A0522D;
       text-decoration: none;
     }
 
-    /* === 麵包屑導航區塊樣式 === */
+    /* === 麵包屑導航樣式 === */
     .breadcrumb {
       margin-bottom: 20px;
       font-size: 14px;
     }
-
-    .breadcrumb a {
-      color: #A0522D;
-      text-decoration: none;
-    }
-
     .breadcrumb a:hover {
       text-decoration: underline;
     }
@@ -46,7 +41,6 @@
       margin-top: 40px;
       text-align: center;
     }
-
     .action-button {
       display: inline-block;
       margin: 10px;
@@ -60,9 +54,56 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
     }
-
     .action-button:hover {
       background-color: #8B3A3A;
+    }
+
+    /* === 新增：留言區樣式 === */
+    #comment-section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #FFFFFF;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #comment-section h2 {
+      margin-top: 0;
+      color: #2E2E2E;
+    }
+    #comment-form {
+      margin-bottom: 20px;
+    }
+    #comment-form input[type="text"] {
+      width: calc(100% - 100px);
+      padding: 6px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    #comment-form textarea {
+      width: 100%;
+      height: 80px;
+      resize: vertical;
+      padding: 8px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    #comment-form button {
+      padding: 6px 12px;
+      margin-left: 8px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .comment-item {
+      background: #F5E5C0;
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 4px;
+    }
+    .comment-item .meta {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 6px;
     }
   </style>
 </head>
@@ -71,7 +112,7 @@
 
   <!-- 🍞 麵包屑導航 -->
   <div class="breadcrumb">
-    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> > 路人100
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> &gt; 路人100
   </div>
 
   <!-- 📄 心得標題 -->
@@ -84,8 +125,6 @@
     是一部兼具搞笑以及道理的戰鬥動畫,如果只是一部搞笑的戰鬥動畫,我想可能就不會這麼受歡迎了。<br>
     主角影山茂夫,大家都稱他為[路人]因為影山看起來很不起眼就如同路人,國中二年級的路人就如同大部分國中生一樣<br>
     在這個多愁善感的[青春期]。在這段時期有的人追求學業,有些人揮灑青春的汗水,也有人在這個時期選擇放棄人生快樂的玩一場。<br>
-    
-    
   </p>
 
   <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
@@ -93,6 +132,52 @@
     <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
     <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
   </div>
+
+  <!-- 🆕 新增：留言區 HTML -->
+  <section id="comment-section">
+    <h2>💬 留言區</h2>
+    <form id="comment-form">
+      <input type="text" id="commenter" placeholder="你的大名" required>
+      <button type="submit">送出</button><br><br>
+      <textarea id="comment-text" placeholder="在這裡留下你的留言…" required></textarea>
+    </form>
+    <div id="comments-list"><!-- 留言會自動顯示在這裡 --></div>
+  </section>
+
+  <!-- 🆕 新增：留言區邏輯 -->
+  <script>
+    const form = document.getElementById('comment-form');
+    const list = document.getElementById('comments-list');
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+
+    function renderComments() {
+      list.innerHTML = '';
+      comments.forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'comment-item';
+        div.innerHTML = `
+          <div class="meta">${c.name} • ${new Date(c.time).toLocaleString()}</div>
+          <div class="text">${c.text.replace(/\n/g, '<br>')}</div>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    renderComments();
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('commenter').value.trim();
+      const text = document.getElementById('comment-text').value.trim();
+      if (!name || !text) return;
+      const comment = { name, text, time: Date.now() };
+      comments.unshift(comment);
+      if (comments.length > 50) comments.pop();
+      localStorage.setItem('comments', JSON.stringify(comments));
+      renderComments();
+      form.reset();
+    });
+  </script>
 
 </body>
 </html>
