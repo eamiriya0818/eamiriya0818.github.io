@@ -19,32 +19,59 @@
       background-color: #ffffff;
       display: inline-block;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    #resetBtn {
+      padding: 10px 20px;
+      font-size: 20px;
+      font-family: "DFKai-SB", "標楷體", serif;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #resetBtn:hover {
+      background-color: #c0392b;
     }
   </style>
 </head>
 <body>
 
   <div id="greeting">載入中...</div>
+  <button id="resetBtn">清除紀錄</button>
 
   <script>
     const userId = "U1243000";
     const visitKey = `visitCount_${userId}`;
-    const visitedBefore = localStorage.getItem(visitKey);
-
     const greetingElement = document.getElementById("greeting");
+    const resetBtn = document.getElementById("resetBtn");
 
-    if (!visitedBefore) {
-      // 第一次來訪
+    // 顯示邏輯
+    const storedCount = localStorage.getItem(visitKey);
+
+    if (!storedCount) {
       greetingElement.textContent = `Hi ${userId}`;
       localStorage.setItem(visitKey, "1");
     } else {
-      // 第二次以後來訪
-      let visitCount = parseInt(visitedBefore, 10) + 1;
+      let visitCount = parseInt(storedCount, 10) + 1;
       localStorage.setItem(visitKey, visitCount.toString());
-      greetingElement.textContent = `歡迎光臨 即涼即飲（您已造訪 ${visitCount} 次）`;
+
+      if (visitCount % 2 === 1) {
+        greetingElement.textContent = `歡迎光臨 即涼即飲（您已造訪 ${visitCount} 次）`;
+      } else {
+        greetingElement.textContent = `您已造訪 ${visitCount} 次`;
+      }
     }
+
+    // 清除按鈕事件
+    resetBtn.addEventListener("click", () => {
+      localStorage.removeItem(visitKey);
+      location.reload(); // 重新載入頁面
+    });
   </script>
 
 </body>
 </html>
-
