@@ -1,0 +1,302 @@
+<!DOCTYPE html> <!-- HTML5 文件 -->
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花束般的戀愛</title>
+  <style>
+    /* === 頁面基本樣式（既有） === */
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #F5E5C0;
+      color: #4E3E2A;
+      margin: 30px;
+      line-height: 1.8;
+    }
+    h1 {
+      color: #A0522D;
+      font-family: "Comic Sans MS", cursive;
+    }
+    a {
+      color: #A0522D;
+      text-decoration: none;
+    }
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .button-area {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .action-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #A0522D;
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: "Comic Sans MS", cursive;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .action-button:hover {
+      background-color: #8B3A3A;
+    }
+
+    /* === 新增：留言區樣式開始 === */
+    #comment-section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: skyblue;                   /* 新增：天空藍背景 */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #comment-section h2 {
+      margin-top: 0;
+      color: #2E2E2E;
+    }
+    #comment-form {
+      margin-bottom: 20px;
+    }
+    #comment-form input[type="text"],
+    #comment-form textarea,
+    #comment-form button,
+    #comment-form input[type="file"],
+    #comment-form select {                   /* 新增：select 同樣繼承樣式 */
+      font-family: inherit;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    #comment-form img.preview {
+      max-width: 100px;
+      display: block;
+      margin-top: 8px;
+    }
+    .comment-item {
+      background: #e0f7ff;                    /* 新增：淺天藍 */
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 4px;
+      position: relative;                     /* 新增：定位按鈕 */
+    }
+    .comment-item .meta {
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .comment-avatar {                         /* 新增：Avatar 圖示 */
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .delete-btn, .edit-btn, .reply-btn {     /* 新增：功能按鈕 */
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 8px;
+      color: #A0522D;
+    }
+    .delete-btn:hover, .edit-btn:hover, .reply-btn:hover {
+      color: #8B3A3A;
+    }
+    .edit-area {                              /* 新增：編輯輸入框 */
+      width: 100%;
+      height: 60px;
+      margin-top: 6px;
+      display: none;
+    }
+    .replies {                               /* 新增：回覆容器縮排 */
+      margin-left: 48px;
+      margin-top: 10px;
+    }
+    /* === 新增：留言區樣式結束 === */
+  </style>
+</head>
+<body>
+
+  <!-- 🍞 麵包屑導航 -->
+  <div class="breadcrumb">
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> &gt; 路人100
+  </div>
+
+  <!-- 📄 心得標題 -->
+  <h1>花束般的戀愛</h1>
+
+  <!-- 📄 心得內容 -->
+  <p>
+    路人100原本我剛看完第一集其實原本沒有打算接著看下去。<br>
+    但是我同學不斷的推薦我不要放棄,直到看了第二集後我就開始感受到路人100的魅力了。<br>
+    …（省略其餘文章內容）…
+  </p>
+
+  <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
+  <div class="button-area">
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
+    <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
+  </div>
+
+  <!-- === 新增：留言區 HTML 開始 === -->
+  <section id="comment-section">
+    <h2>💬 留言區</h2>
+    <form id="comment-form">
+      <input type="text" id="commenter" placeholder="你的大名" required>
+
+      <!-- 新增：預設 Avatar 選單 -->
+      <select id="avatar-select">
+        <option value="">── 選擇預設頭像 ──</option>
+        <option value="avatars/avatar1.png">🐱 貓咪</option>
+        <option value="avatars/avatar2.png">🐶 小狗</option>
+        <option value="avatars/avatar3.png">🦊 小狐狸</option>
+      </select>
+
+      <!-- 新增：Avatar URL 欄位 -->
+      <input type="text" id="comment-avatar" placeholder="或自行貼上 Avatar URL">
+
+      <!-- 新增：圖片上傳欄位 -->
+      <input type="file" id="comment-image" accept="image/*">
+      <img id="image-preview" class="preview" style="display:none;">
+
+      <button type="submit">送出</button><br>
+      <textarea id="comment-text" placeholder="在這裡留下你的留言…" required></textarea>
+    </form>
+    <div id="comments-list"></div>
+  </section>
+  <!-- === 新增：留言區 HTML 結束 === -->
+
+  <!-- === 新增：留言區 JavaScript 開始 === -->
+  <script>
+    const bannedWords = ['badword1','badword2']; // 新增：敏感詞過濾清單
+
+    const form = document.getElementById('comment-form');
+    const list = document.getElementById('comments-list');
+    const imageInput = document.getElementById('comment-image');
+    const imagePreview = document.getElementById('image-preview');
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+
+    // 新增：圖片預覽
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (!file) return imagePreview.style.display = 'none';
+      const reader = new FileReader();
+      reader.onload = e => {
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // 新增：檢查敏感詞
+    function containsBanned(text) {
+      return bannedWords.some(w => text.includes(w));
+    }
+
+    // 渲染留言（含回覆、編輯、刪除、Avatar、上傳圖、回覆）
+    function renderComments(arr = comments, container = list) {
+      container.innerHTML = '';
+      arr.forEach((c, idx) => {
+        const div = document.createElement('div');
+        div.className = 'comment-item';
+        div.innerHTML = `
+          <div class="meta">
+            <img src="${c.avatar || 'default-avatar.png'}" class="comment-avatar">
+            <strong>${c.name}</strong> • ${new Date(c.time).toLocaleString()}
+            <button class="delete-btn" data-index="${idx}">✖</button>
+            <button class="edit-btn" data-index="${idx}">✎</button>
+            <button class="reply-btn" data-index="${idx}">↩</button>
+          </div>
+          <div class="text">${c.text.replace(/\n/g,'<br>')}</div>
+          ${c.image ? `<img src="${c.image}" style="max-width:150px;margin-top:8px;">` : ''}
+          <textarea class="edit-area" data-index="${idx}">${c.text}</textarea>
+          <div class="replies" data-index="${idx}"></div>
+        `;
+        container.appendChild(div);
+
+        // 刪除
+        div.querySelector('.delete-btn').onclick = () => {
+          comments.splice(idx, 1);
+          saveAndRe();
+        };
+        // 編輯
+        const editBtn = div.querySelector('.edit-btn');
+        const editArea = div.querySelector('.edit-area');
+        editBtn.onclick = () => {
+          if (editArea.style.display === 'none') {
+            editArea.style.display = 'block';
+            editBtn.textContent = '✔';
+            editArea.focus();
+          } else {
+            const newText = editArea.value.trim();
+            if (newText && !containsBanned(newText)) {
+              comments[idx].text = newText;
+              saveAndRe();
+            }
+          }
+        };
+        // 回覆
+        div.querySelector('.reply-btn').onclick = () => {
+          const replyText = prompt('輸入你的回覆：');
+          if (replyText && !containsBanned(replyText)) {
+            comments[idx].replies = comments[idx].replies || [];
+            comments[idx].replies.push({
+              name: comments[idx].name,
+              text: replyText,
+              time: Date.now()
+            });
+            saveAndRe();
+          }
+        };
+        // 遞迴渲染回覆
+        if (c.replies) {
+          renderComments(c.replies, div.querySelector('.replies'));
+        }
+      });
+    }
+
+    function saveAndRe() {
+      localStorage.setItem('comments', JSON.stringify(comments));
+      renderComments();
+    }
+
+    // 新增留言
+    form.onsubmit = e => {
+      e.preventDefault();
+      const name = form.commenter.value.trim();
+      const text = form['comment-text'].value.trim();
+      if (!name || !text || containsBanned(text)) return;
+      const newC = { name, text, time: Date.now() };
+
+      // 新增：優先使用下拉選的 Avatar
+      const preset = document.getElementById('avatar-select').value;
+      if (preset) newC.avatar = preset;
+      else {
+        const av = form['comment-avatar'].value.trim();
+        if (av) newC.avatar = av;
+      }
+
+      // 新增：上傳圖片
+      if (imagePreview.src) newC.image = imagePreview.src;
+
+      comments.unshift(newC);
+      if (comments.length > 50) comments.pop();
+      form.reset();
+      imagePreview.style.display = 'none';
+      saveAndRe();
+    };
+
+    // 初始渲染
+    renderComments();
+  </script>
+  <!-- === 新增：留言區 JavaScript 結束 === -->
+
+</body>
+</html>
