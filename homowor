@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>歡迎頁面</title>
+  <style>
+    body {
+      font-family: "DFKai-SB", "標楷體", serif;
+      font-size: 28px;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0f8ff;
+      color: #2c3e50;
+    }
+
+    #greeting {
+      padding: 30px 50px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="greeting">載入中...</div>
+
+  <script>
+    const userId = "U1243000";
+    const visitKey = `visitCount_${userId}`;
+    const visitedBefore = localStorage.getItem(visitKey);
+
+    const greetingElement = document.getElementById("greeting");
+
+    if (!visitedBefore) {
+      // 第一次來訪
+      greetingElement.textContent = `Hi ${userId}`;
+      localStorage.setItem(visitKey, "1");
+    } else {
+      // 第二次以後來訪
+      let visitCount = parseInt(visitedBefore, 10) + 1;
+      localStorage.setItem(visitKey, visitCount.toString());
+      greetingElement.textContent = `歡迎光臨 即涼即飲（您已造訪 ${visitCount} 次）`;
+    }
+  </script>
+
+</body>
+</html>
+
