@@ -60,6 +60,42 @@
       margin: 320px 220px 20px 20px;
       text-align: center;
     }
+    nav.side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #D3B29C;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
+    nav.side-menu li { margin-bottom: 15px; }
+    nav.side-menu a {
+      text-decoration: none;
+      color: #2E2E2E;
+      font-size: 18px;
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+    nav.side-menu a:hover {
+      background-color: #EA7500;
+      color: white;
+      border-radius: 8px;
+      padding: 4px 8px;
+    }
+    .side-menu .nav-item.dropdown:hover .dropdown-menu {
+      display: block!important;
+      animation: fadeIn 0.4s;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .dropdown-item:hover {
+      background-color: #EBD4A2;
+      color: #2E2E2E;
+    }
   </style>
 </head>
 <body>
@@ -103,57 +139,10 @@
       歡迎在我的 BLOG 分享心得、討論交流！
     </p>
   </div>
-  <div class="card-grid">
-    <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-      <div class="card">
-        <img src="路人.jpg" alt="路人100">
-        <h3>路人100</h3>
-        <p>還沒看完</p>
-      </div>
-    </a>
-    <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-      <div class="card">
-        <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
-        <h3>雨傘學院</h3>
-        <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
-      </div>
-    </a>
-    <div class="card">
-      <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
-      <h3>苦盡柑來遇見你</h3>
-      <p>還沒看完</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
-      <h3>霍爾的移動城堡</h3>
-      <p>卡西法真的好可愛，霍爾真的好帥</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
-      <h3>幸福綠皮書</h3>
-      <p>我還在想</p>
-    </div>
-    <div class="card">
-      <img src="花束.jpg" alt="花束般的戀愛">
-      <h3>花束般的戀愛</h3>
-      <p>相遇總是藏著別離<br>開始就是結束的開端</p>
-    </div>
-  </div>
 </main>
 
-<script>
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', e => {
-      const emoji = document.createElement('span');
-      emoji.classList.add('emoji');
-      emoji.innerText = ['✨','🌟','💖','🎉','🌸','❤️','🔥'][Math.floor(Math.random() * 7)];
-      emoji.style.left = `${e.offsetX}px`;
-      emoji.style.top = `${e.offsetY}px`;
-      card.appendChild(emoji);
-      setTimeout(() => emoji.remove(), 1000);
-    });
-  });
-</script>
+</body>
+</html>
 
 </body>
 </html>
