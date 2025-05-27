@@ -190,21 +190,6 @@
       </div>
     </div>
   </main>
-
-  <!-- Emoji 粒子動畫 Script -->
-  <script>
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', e => {
-        const emoji = document.createElement('span');
-        emoji.classList.add('emoji');
-        emoji.innerText = ['✨','🌟','💖','🎉','🌸','❤️','🔥'][Math.floor(Math.random() * 7)];
-        emoji.style.left = ${e.offsetX}px;
-        emoji.style.top = ${e.offsetY}px;
-        card.appendChild(emoji);
-        setTimeout(() => emoji.remove(), 1000);
-      });
-    });
-  </script>
 </body>
 </html>
 
