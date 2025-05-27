@@ -8,105 +8,112 @@
   <!-- 引入 Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- 引入復古日系字體 Kaisei Opti -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
 
   <style>
     html, body {
       margin: 0; padding: 0;
-      background-color: #C2A588;
-      color: #EA7500;
-      font-family: "Arial", sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png') repeat;
+      background-color: #D3B29C;
+      color: #4E3E2A;
+      font-family: 'Kaisei Opti', serif;
     }
     header {
       position: fixed; top: 60px; left: 0; right: 200px;
-      height: 120px; background-color: #C2A588; z-index: 1000;
+      height: 120px; background-color: #D3B29C; z-index: 1000;
     }
     .logo {
       width: 150px; display: block; margin: 10px;
     }
     .header-title {
-      margin: 10px; font-size: 24px; font-weight: bold;
+      margin: 10px; font-size: 28px; font-weight: bold;
+      color: #A94438;
     }
     .blog-message {
       position: absolute; top:50%; left:50%;
       transform: translate(-50%,-50%);
-      color:#A0522D; font-size:60px; font-weight:bold;
-      font-family:"Comic Sans MS",cursive;
-      animation: blink 1s infinite; white-space:nowrap;
-      z-index:1001;
+      color: #A94438; font-size: 60px; font-weight: bold;
+      font-family: 'Kaisei Opti', serif;
+      animation: blink 1s infinite; white-space: nowrap;
+      z-index: 1001;
     }
     @keyframes blink {
       0%,100% { opacity:1; } 50% { opacity:0; }
     }
-
     main {
       margin: 200px 220px 20px 20px;
       text-align: center;
     }
-
     .site-description {
       max-width: 900px; margin:30px auto;
-      background-color:#F5E5C0; padding:20px;
+      background-color:#FAF9F6; padding:20px;
       border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
       color:#4E3E2A; line-height:1.7; font-size:16px;
-      font-family:"標楷體","DFKai-SB",serif;
+      font-family: 'Kaisei Opti', serif;
     }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      gap:20px; max-width:1000px; margin:0 auto;
+      gap: 20px; max-width: 1000px; margin: 0 auto;
     }
     .card {
-      background-color:#F5E5C0; border-radius:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.2);
-      overflow:hidden; text-align:center; padding:15px;
-      transition:transform .3s,box-shadow .3s;
-      cursor:pointer; position:relative;
+      background-color: #FAF9F6; border: 1px solid #EDEAF0;
+      border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden; text-align: center; padding: 15px;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer; position: relative;
     }
     .card:hover {
-      transform:scale(1.05);
-      box-shadow:0 4px 16px rgba(0,0,0,0.3);
+      background-color: #F1D8E0;
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
     .card img {
-      width:100%; height:180px; object-fit:cover;
-      border-radius:8px;
+      width: 100%; height: 180px; object-fit: cover;
+      border-radius: 8px;
     }
     .card h3 {
-      margin:15px 0 10px;
-      font-family:"Comic Sans MS",cursive;
-      color:#A0522D; font-size:20px;
+      margin: 15px 0 10px;
+      font-family: 'Kaisei Opti', serif;
+      color: #A94438; font-size: 20px;
     }
     .card p {
-      font-size:14px; color:#4E3E2A;
+      font-size: 14px; color: #4E3E2A;
     }
     .emoji {
-      position:absolute; font-size:24px;
-      pointer-events:none;
-      animation:floatUp 1s ease-out forwards;
+      position: absolute; font-size: 24px;
+      pointer-events: none;
+      animation: floatUp 1s ease-out forwards;
     }
     @keyframes floatUp {
       0% { opacity:1; transform:translateY(0); }
       100% { opacity:0; transform:translateY(-80px) scale(1.5); }
     }
-
     nav.side-menu {
-      position:fixed; top:0; right:0; width:200px; height:100%;
-      background-color:#C2A588; padding:20px; box-sizing:border-box;
+      position: fixed; top: 0; right: 0; width: 200px; height: 100%;
+      background-color: #D3B29C; padding: 20px; box-sizing: border-box;
     }
-    nav.side-menu ul { list-style:none; padding:0; margin:0; }
-    nav.side-menu li { margin-bottom:15px; }
+    nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
+    nav.side-menu li { margin-bottom: 15px; }
     nav.side-menu a {
-      text-decoration:none; color:#2E2E2E; font-size:18px;
+      text-decoration: none; color: #2E2E2E; font-size: 18px;
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+    nav.side-menu a:hover {
+      background-color: #EA7500; color: white;
+      border-radius: 8px; padding: 4px 8px;
     }
     .side-menu .nav-item.dropdown:hover .dropdown-menu {
-      display:block!important; animation:fadeIn .4s;
+      display: block!important; animation: fadeIn .4s;
     }
     @keyframes fadeIn {
       0% { opacity:0; transform:translateY(-10px); }
       100% { opacity:1; transform:translateY(0); }
     }
     .dropdown-item:hover {
-      background-color:#EBD4A2; color:#2E2E2E;
+      background-color: #EBD4A2; color: #2E2E2E;
     }
   </style>
 </head>
