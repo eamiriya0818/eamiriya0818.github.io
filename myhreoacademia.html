@@ -50,15 +50,6 @@
       color: #A94438;
       font-size: 24px;
       margin-top: 10px;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    main {
-      margin: 320px 220px 20px 20px;
-      text-align: center;
     }
     nav.side-menu {
       position: fixed;
@@ -96,15 +87,31 @@
       background-color: #EBD4A2;
       color: #2E2E2E;
     }
+    main {
+      margin: 320px 220px 20px 20px;
+      text-align: center;
+    }
+    .site-description {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #FAF9F6;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      color: #4E3E2A;
+      line-height: 1.7;
+      font-size: 16px;
+    }
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 0 auto;
     }
     .card {
       background-color: #FAF9F6;
+      border: 1px solid #EDEAF0;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       overflow: hidden;
@@ -112,6 +119,7 @@
       padding: 15px;
       transition: transform .3s, box-shadow .3s;
       cursor: pointer;
+      position: relative;
     }
     .card:hover {
       background-color: #F1D8E0;
@@ -176,25 +184,58 @@
       歡迎在我的 BLOG 分享心得、討論交流！
     </p>
   </div>
-
   <div class="card-grid">
+    <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+      <div class="card">
+        <img src="路人.jpg" alt="路人100">
+        <h3>路人100</h3>
+        <p>還沒看完</p>
+      </div>
+    </a>
+    <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+      <div class="card">
+        <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
+        <h3>雨傘學院</h3>
+        <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
+      </div>
+    </a>
+    <div class="card">
+      <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
+      <h3>苦盡柑來遇見你</h3>
+      <p>還沒看完</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
+      <h3>霍爾的移動城堡</h3>
+      <p>卡西法真的好可愛，霍爾真的好帥</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
+      <h3>幸福綠皮書</h3>
+      <p>我還在想</p>
+    </div>
     <div class="card">
       <img src="花束.jpg" alt="花束般的戀愛">
       <h3>花束般的戀愛</h3>
       <p>相遇總是藏著別離<br>開始就是結束的開端</p>
     </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?cinema" alt="幸福綠皮書">
-      <h3>幸福綠皮書</h3>
-      <p>我還在想</p>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?castle" alt="霍爾的移動城堡">
-      <h3>霍爾的移動城堡</h3>
-      <p>卡西法真的好可愛，霍爾真的好帥</p>
-    </div>
   </div>
 </main>
 
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', e => {
+      const emoji = document.createElement('span');
+      emoji.classList.add('emoji');
+      emoji.innerText = ['✨','🌟','💖','🎉','🌸','❤️','🔥'][Math.floor(Math.random() * 7)];
+      emoji.style.left = `${e.offsetX}px`;
+      emoji.style.top = `${e.offsetY}px`;
+      card.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 1000);
+    });
+  });
+</script>
+
 </body>
 </html>
+
