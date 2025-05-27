@@ -12,7 +12,7 @@
   <!-- 引入復古日系字體 Kaisei Opti -->
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
 
-  <style>
+<style>
     html, body {
       margin: 0; padding: 0;
       background: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png') repeat;
@@ -50,98 +50,14 @@
       color: #A94438;
       font-size: 24px;
       margin-top: 10px;
+      animation: blink 1s infinite;
     }
-    nav.side-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 100%;
-      background-color: #D3B29C;
-      padding: 20px;
-      box-sizing: border-box;
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
-    nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
-    nav.side-menu li { margin-bottom: 15px; }
-    nav.side-menu a {
-      text-decoration: none;
-      color: #2E2E2E;
-      font-size: 18px;
-      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    }
-    nav.side-menu a:hover {
-      background-color: #EA7500;
-      color: white;
-      border-radius: 8px;
-      padding: 4px 8px;
-    }
-    .side-menu .nav-item.dropdown:hover .dropdown-menu {
-      display: block!important;
-      animation: fadeIn 0.4s;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .dropdown-item:hover {
-      background-color: #EBD4A2;
-      color: #2E2E2E;
-    }
-    main {
-      margin: 320px 220px 20px 20px;
-      text-align: center;
-    }
-    .site-description {
-      max-width: 900px;
-      margin: 30px auto;
-      background-color: #FAF9F6;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      color: #4E3E2A;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .card {
-      background-color: #FAF9F6;
-      border: 1px solid #EDEAF0;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      overflow: hidden;
-      text-align: center;
-      padding: 15px;
-      transition: transform .3s, box-shadow .3s;
-      cursor: pointer;
-      position: relative;
-    }
-    .card:hover {
-      background-color: #F1D8E0;
-      transform: scale(1.05);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    }
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .card h3 {
-      margin: 15px 0 10px;
-      font-size: 20px;
-      color: #A94438;
-    }
-    .card p {
-      font-size: 14px;
-      color: #4E3E2A;
-    }
-  </style>
+</style>
+
 </head>
 <body>
 
