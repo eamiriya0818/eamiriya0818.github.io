@@ -65,59 +65,70 @@
       color: #2E2E2E;
     }
     main {
-  margin: 40px 220px 20px 20px;
-  text-align: center;
-}
-  .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-}
-.card {
-  background-color: #F5E5C0;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  overflow: hidden;
-  text-align: center;
-  padding: 15px;
-  transition: transform .3s, box-shadow .3s;
-  cursor: pointer;
-  position: relative;
-}
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-}
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.card h3 {
-  margin: 15px 0 10px;
-  font-family: "Comic Sans MS", cursive;
-  color: #A0522D;
-  font-size: 20px;
-}
-.card p {
-  font-size: 14px;
-  color: #4E3E2A;
-}
-.card .more-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 6px 12px;
-  font-size: 14px;
-  background-color: #EA7500;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-</style>
+      margin: 40px 220px 20px 20px;
+      text-align: center;
+    }
+    .site-description {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #F5E5C0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #4E3E2A;
+      line-height: 1.7;
+      font-size: 16px;
+      font-family: "標楷體", "DFKai-SB", serif;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    .card {
+      background-color: #F5E5C0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 15px 0 10px;
+      font-family: "Comic Sans MS", cursive;
+      color: #A0522D;
+      font-size: 20px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #4E3E2A;
+    }
+    .card .more-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      background-color: #EA7500;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -159,45 +170,43 @@
     </p>
   </div>
 
-    <div class="card-grid">
-      <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-        <div class="card">
-          <img src="路人.jpg" alt="路人100">
-          <h3>路人100</h3>
-          <p>還沒看完</p>
-        </div>
-      </a>
-      <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-        <div class="card">
-          <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
-          <h3>雨傘學院</h3>
-          <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
-        </div>
-      </a>
+  <div class="card-grid">
+    <a href="ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="card">
-        <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
-        <h3>苦盡柑來遇見你</h3>
+        <img src="路人.jpg" alt="路人100">
+        <h3>路人100</h3>
         <p>還沒看完</p>
       </div>
+    </a>
+    <a href="TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
-        <h3>霍爾的移動城堡</h3>
-        <p>卡西法真的好可愛，霍爾真的好帥</p>
+        <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
+        <h3>雨傘學院</h3>
+        <p>即使我們家庭關係殘破不堪，但我們還是一家人</p>
       </div>
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
-        <h3>幸福綠皮書</h3>
-        <p>我還在想</p>
-      </div>
-      <div class="card">
-        <img src="花束.jpg" alt="花束般的戀愛">
-        <h3>花束般的戀愛</h3>
-        <p>相遇總是藏著別離<br>開始就是結束的開端</p>
-      </div>
+    </a>
+    <div class="card">
+      <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
+      <h3>苦盡柑來遇見你</h3>
+      <p>還沒看完</p>
     </div>
-  </main>
-</body>
-</html>
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?drama" alt="霍爾的移動城堡">
+      <h3>霍爾的移動城堡</h3>
+      <p>卡西法真的好可愛，霍爾真的好帥</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?freedom" alt="幸福綠皮書">
+      <h3>幸福綠皮書</h3>
+      <p>我還在想</p>
+    </div>
+    <div class="card">
+      <img src="花束.jpg" alt="花束般的戀愛">
+      <h3>花束般的戀愛</h3>
+      <p>相遇總是藏著別離<br>開始就是結束的開端</p>
+    </div>
+  </div>
+</main>
 
 </body>
 </html>
