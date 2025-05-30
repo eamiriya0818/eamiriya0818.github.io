@@ -17,22 +17,26 @@
       font-family: "Arial", sans-serif;
     }
     .hero-banner {
-      background: url("title11.jpg") center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
+      overflow: hidden;
+    }
+    .hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      display: block;
     }
     .hero-overlay {
-      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.85);
       padding: 20px 40px;
       border-radius: 12px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .hero-overlay h1 {
       font-size: 32px;
@@ -70,21 +74,9 @@
       color: #2E2E2E;
     }
     main {
-      margin: 360px auto 20px 220px;
+      margin: 40px auto 20px 220px;
       max-width: 1200px;
       text-align: center;
-    }
-    .site-description {
-      background-color: #F5E5C0;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      color: #4E3E2A;
-      line-height: 1.7;
-      font-size: 16px;
-      font-family: "標楷體", "DFKai-SB", serif;
-      max-width: 900px;
-      margin: 30px auto;
     }
     .card-grid {
       display: grid;
@@ -139,6 +131,7 @@
 <body>
 
 <header class="hero-banner">
+  <img src="title11.jpg" class="hero-img" alt="主視覺圖">
   <div class="hero-overlay">
     <h1>嗨！歡迎光臨我的小窩！</h1>
   </div>
@@ -164,7 +157,6 @@
 </nav>
 
 <main>
-  </div>
   <div class="card-grid">
     <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="card">
@@ -205,3 +197,4 @@
 
 </body>
 </html>
+
