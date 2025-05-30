@@ -4,72 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我在Netflix上學到的人生觀</title>
+
+  <!-- 引入 Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
     html, body {
       margin: 0; padding: 0;
-      background: linear-gradient(to bottom right, #F8CEDF, #F9E3E9);
-      color: #EA7500;
-      font-family: "Arial", sans-serif;
+      font-family: "Kaisei Opti", serif;
+      background-color: #f6d1c3;
+      color: #A94438;
     }
-
     .hero-banner {
-      background: url("title11.jpg") center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
       width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
+      overflow: hidden;
+      background-color: #f6d1c3;
     }
-
-    .monthly-pick-showa {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background-color: #B62020;
-      padding: 12px 20px;
-      border-radius: 8px;
-      transform: rotate(-2deg);
-      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
-      font-family: "DFKai-SB", "標楷體", serif;
-      color: #fff;
-      width: max-content;
+    .hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
     }
-
-    .monthly-pick-showa .tag {
-      font-size: 14px;
-      background-color: #fff;
-      color: #B62020;
-      display: inline-block;
-      padding: 2px 6px;
-      margin-bottom: 6px;
-      transform: rotate(-5deg);
-      font-weight: bold;
-      border-left: 4px solid #B62020;
-    }
-
-    .monthly-pick-showa .pick-title {
-      font-size: 18px;
-      line-height: 1.3;
-    }
-
     nav.side-menu {
       position: fixed;
       top: 0;
       right: 0;
       width: 200px;
       height: 100%;
-      background-color: #C2A588;
+      background-color: #F6D1C3;
       padding: 20px;
       box-sizing: border-box;
     }
-
     nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
     nav.side-menu li { margin-bottom: 15px; }
     nav.side-menu a {
@@ -77,28 +46,23 @@
       color: #2E2E2E;
       font-size: 18px;
     }
-
     .side-menu .nav-item.dropdown:hover .dropdown-menu {
       display: block!important;
       animation: fadeIn .4s;
     }
-
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(-10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-
     .dropdown-item:hover {
       background-color: #EBD4A2;
       color: #2E2E2E;
     }
-
     main {
-      margin: 360px auto 20px 220px;
-      max-width: 1200px;
-      text-align: center;
-    }
-
+  margin: 40px auto 20px auto;
+  max-width: 1000px;
+  text-align: center;
+}
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -106,11 +70,10 @@
       max-width: 1000px;
       margin: 40px auto;
     }
-
     .card {
-      background-color: #F5E5C0;
+      background-color: #FAE3C8;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       overflow: hidden;
       text-align: center;
       padding: 15px;
@@ -118,31 +81,28 @@
       cursor: pointer;
       position: relative;
     }
-
     .card:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
-
     .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       border-radius: 8px;
     }
-
     .card h3 {
       margin: 15px 0 10px;
       font-family: "Comic Sans MS", cursive;
-      color: #A0522D;
       font-size: 20px;
+      background: linear-gradient(to bottom, #4B9CD3, #D97C7C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
     .card p {
       font-size: 14px;
       color: #4E3E2A;
     }
-
     .card .more-button {
       display: inline-block;
       margin-top: 10px;
@@ -153,20 +113,48 @@
       border-radius: 6px;
       text-decoration: none;
     }
-  </style>
+    .left-widgets {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .suggest-box {
+  background-color: #FAE3C8;
+  border: 2px dashed #EA7500;
+  padding: 12px;
+  font-size: 14px;
+  color: #4E3E2A;
+  border-radius: 10px;
+  max-width: 180px;
+  font-family: "Comic Sans MS", cursive;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+</style>
 </head>
 <body>
 
 <header class="hero-banner">
-  <!-- ✅ 昭和推薦標籤 -->
-  <div class="monthly-pick-showa">
-    <div class="tag">本月推薦</div>
-    <div class="pick-title">《花束般的戀愛》</div>
+  <img src="title11.jpg" class="hero-img" alt="主視覺圖">
+<div class="left-widgets">
+  <div class="suggest-box">
+    <h4>🎬 本月推薦</h4>
+    <p><strong>《花束般的戀愛》</strong><br>一段青春微酸的邂逅</p>
   </div>
+  
+</div>
 </header>
-
-<!-- ✅ 你原本的 nav / main 等內容可以接在這裡 -->
-
 
 <nav class="side-menu">
   <ul>
@@ -228,4 +216,3 @@
 
 </body>
 </html>
-
