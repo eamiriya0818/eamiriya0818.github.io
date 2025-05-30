@@ -11,148 +11,104 @@
 
   <style>
     html, body {
-  margin: 0; padding: 0;
-  background: linear-gradient(to bottom right, #D3E2F2, #FBD6DC); /* 📌 淡藍到淡粉 */
-  color: #333333;
-  font-family: 'Kaisei Opti', "Arial", sans-serif;
-}
-
-    header {
-      position: fixed; top: 60px; left: 0; right: 200px;
-      height: 120px; background-color: #C2A588; z-index: 1000;
+      margin: 0; padding: 0;
+      background-color: #C2A588;
+      color: #EA7500;
+      font-family: "Arial", sans-serif;
     }
-    .logo {
-      width: 150px; display: block; margin: 10px;
-    }
-    .header-title {
-      margin: 10px; font-size: 24px; font-weight: bold;
-    }
-    .blog-message {
-      position: absolute; top:50%; left:50%;
-      transform: translate(-50%,-50%);
-      color:#A0522D; font-size:60px; font-weight:bold;
-      font-family:"Comic Sans MS",cursive;
-      animation: blink 1s infinite; white-space:nowrap;
-      z-index:1001;
-    }
-    @keyframes blink {
-      0%,100% { opacity:1; } 50% { opacity:0; }
-    }
-
-    main {
-      margin: 200px 220px 20px 20px;
+    .hero-banner {
+      background: url() center/cover no-repeat;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       text-align: center;
     }
-
-    .site-description {
-      max-width: 900px; margin:30px auto;
-      background-color:#F5E5C0; padding:20px;
-      border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);
-      color:#4E3E2A; line-height:1.7; font-size:16px;
-      font-family:"標楷體","DFKai-SB",serif;
+    .hero-overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px 40px;
+      border-radius: 12px;
     }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap:20px; max-width:1000px; margin:0 auto;
+    .hero-overlay h1 {
+      font-size: 32px;
+      color: #A0522D;
+      margin: 0;
     }
-    .card {
-      background-color:#F5E5C0; border-radius:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.2);
-      overflow:hidden; text-align:center; padding:15px;
-      transition:transform .3s,box-shadow .3s;
-      cursor:pointer; position:relative;
-    }
-    .card:hover {
-      transform:scale(1.05);
-      box-shadow:0 4px 16px rgba(0,0,0,0.3);
-    }
-    .card img {
-      width:100%; height:180px; object-fit:cover;
-      border-radius:8px;
-    }
-    .card h3 {
-      margin:15px 0 10px;
-      font-family:"Comic Sans MS",cursive;
-      color:#A0522D; font-size:20px;
-    }
-    .card p {
-      font-size:14px; color:#4E3E2A;
-    }
-    .emoji {
-      position:absolute; font-size:24px;
-      pointer-events:none;
-      animation:floatUp 1s ease-out forwards;
-    }
-    @keyframes floatUp {
-      0% { opacity:1; transform:translateY(0); }
-      100% { opacity:0; transform:translateY(-80px) scale(1.5); }
-    }
-
     nav.side-menu {
-      position:fixed; top:0; right:0; width:200px; height:100%;
-      background-color:#C2A588; padding:20px; box-sizing:border-box;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #C2A588;
+      padding: 20px;
+      box-sizing: border-box;
     }
-    nav.side-menu ul { list-style:none; padding:0; margin:0; }
-    nav.side-menu li { margin-bottom:15px; }
+    nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
+    nav.side-menu li { margin-bottom: 15px; }
     nav.side-menu a {
-      text-decoration:none; color:#2E2E2E; font-size:18px;
+      text-decoration: none;
+      color: #2E2E2E;
+      font-size: 18px;
     }
     .side-menu .nav-item.dropdown:hover .dropdown-menu {
-      display:block!important; animation:fadeIn .4s;
+      display: block!important;
+      animation: fadeIn .4s;
     }
     @keyframes fadeIn {
-      0% { opacity:0; transform:translateY(-10px); }
-      100% { opacity:1; transform:translateY(0); }
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     .dropdown-item:hover {
-      background-color:#EBD4A2; color:#2E2E2E;
+      background-color: #EBD4A2;
+      color: #2E2E2E;
+    }
+    main {
+      margin: 320px 220px 20px 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="網啡帶給我的人生觀444.jpg" alt="網站 Logo" class="logo">
-    <h1 class="header-title">歡迎來到我的 Blog</h1>
-    <p class="blog-message">嗨！歡迎光臨我的小窩！</p>
-  </header>
+<header class="hero-banner">
+  <div class="hero-overlay">
+    <h1>嗨！歡迎光臨我的小窩！</h1>
+  </div>
+</header>
 
-  <nav class="side-menu">
-    <ul>
-      <li><a href="https://eamiriya0818.github.io/myhreoacademia.html">🏠 首頁</a></li>
-      <li><a href="article.html">📝 文章</a></li>
-      <li><a href="https://eamiriya0818.github.io/ruren100video.html">👻 路人100</a></li>
-      <li><a href="TheUmbrellaAcademy.html">☂️ 雨傘學院</a></li>
-      <li><a href="HowlsMovingCastle.html">🏰 霍爾的移動城堡</a></li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-           style="font-size:18px;color:#2E2E2E;padding-left:0;">
-          📁 看更多文章
-        </a>
-        <ul class="dropdown-menu" style="position:static;float:none;background:#F5E5C0;border:none;">
-          <li><a class="dropdown-item" href="https://eamiriya0818.github.io/ruren100video.html">📖 路人100心得</a></li>
-          <li><a class="dropdown-item" href="favorites.html">🌟 收藏頁</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">🔗 其他</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+<nav class="side-menu">
+  <ul>
+    <li><a href="index.html">🏠 首頁</a></li>
+    <li><a href="article.html">📝 文章</a></li>
+    <li><a href="ruren100video.html">👻 路人100</a></li>
+    <li><a href="TheUmbrellaAcademy.html">☂️ 雨傘學院</a></li>
+    <li><a href="HowlsMovingCastle.html">🏰 霍爾的移動城堡</a></li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">📁 看更多文章</a>
+      <ul class="dropdown-menu" style="position:static;float:none;background:#F5E5C0;border:none;">
+        <li><a class="dropdown-item" href="ruren100video.html">📖 路人100心得</a></li>
+        <li><a class="dropdown-item" href="favorites.html">🌟 收藏頁</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">🔗 其他</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
-  <main>
-    <div class="site-description">
-      <h2>關於這個網站</h2>
-      <p>
-        這是一個我設計的 BLOG。<br>
-        嗨！歡迎光臨我的小窩！<br>
-        很高興你能發現我的網站。<br>
-        我是一個很喜歡看劇的大學生，會分享我看到的影集或電影。<br>
-        類型從動漫到韓劇、美劇皆有涉略。<br>
-        歡迎在我的 BLOG 分享心得、討論交流！
-      </p>
-    </div>
+<main>
+  <div class="site-description">
+    <h2>關於這個網站</h2>
+    <p>
+      這是一個我設計的 BLOG。<br>
+      嗨！歡迎光臨我的小窩！<br>
+      很高興你能發現我的網站。<br>
+      我是一個很喜歡看劇的大學生，會分享我看到的影集或電影。<br>
+      類型從動漫到韓劇、美劇皆有涉略。<br>
+      歡迎在我的 BLOG 分享心得、討論交流！
+    </p>
+  </div>
 
     <div class="card-grid">
       <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
@@ -196,4 +152,3 @@
 
 </body>
 </html>
-
