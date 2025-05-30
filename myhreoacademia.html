@@ -113,12 +113,47 @@
       border-radius: 6px;
       text-decoration: none;
     }
-  </style>
+    .left-widgets {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .suggest-box {
+    background-color: #FFF2DF;
+    border-left: 4px solid #EA7500;
+    padding: 10px;
+    font-size: 14px;
+    color: #4E3E2A;
+    border-radius: 8px;
+    max-width: 160px;
+  }
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+</style>
 </head>
 <body>
 
 <header class="hero-banner">
   <img src="title11.jpg" class="hero-img" alt="主視覺圖">
+<div class="left-widgets">
+  <div class="suggest-box">
+    <h4>🎬 本月推薦</h4>
+    <p><strong>《花束般的戀愛》</strong><br>一段青春微酸的邂逅</p>
+  </div>
+  <div class="social-icons">
+    <a href="#"><img src="ig.png" alt="IG" width="24"></a>
+    <a href="#"><img src="yt.png" alt="YT" width="24"></a>
+  </div>
+</div>
 </header>
 
 <nav class="side-menu">
