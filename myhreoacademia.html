@@ -17,38 +17,29 @@
       font-family: "Arial", sans-serif;
     }
     .hero-banner {
-  background: url("title.jpg") center center / cover no-repeat;
-  height: 300px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.75); /* 淺白濾鏡 */
-  z-index: 1;
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-  background-color: transparent;
-  padding: 20px 40px;
-  border-radius: 12px;
-}
-
-.hero-overlay h1 {
-  font-size: 32px;
-  color: #A0522D;
-  margin: 0;
-  text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
-}
-
+      background: url("title.jpg") center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .hero-overlay {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px 40px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .hero-overlay h1 {
+      font-size: 32px;
+      color: #A0522D;
+      margin: 0;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+    }
     nav.side-menu {
       position: fixed;
       top: 0;
@@ -78,13 +69,12 @@
       background-color: #EBD4A2;
       color: #2E2E2E;
     }
-   main {
-  margin: 40px auto 20px 220px;
-  max-width: 1200px;
-}
+    main {
+      margin: 360px auto 20px 220px;
+      max-width: 1200px;
+      text-align: center;
+    }
     .site-description {
-      max-width: 900px;
-      margin: 30px auto;
       background-color: #F5E5C0;
       padding: 20px;
       border-radius: 12px;
@@ -93,6 +83,8 @@
       line-height: 1.7;
       font-size: 16px;
       font-family: "標楷體", "DFKai-SB", serif;
+      max-width: 900px;
+      margin: 30px auto;
     }
     .card-grid {
       display: grid;
@@ -172,19 +164,20 @@
 </nav>
 
 <main>
+  </div>
   <div class="card-grid">
-    <a href="ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+    <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="card">
         <img src="路人.jpg" alt="路人100">
         <h3>路人100</h3>
         <p>還沒看完</p>
       </div>
     </a>
-    <a href="TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+    <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
       <div class="card">
         <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
         <h3>雨傘學院</h3>
-        <p>即使我們家庭關係殘破不堪，但我們還是一家人</p>
+        <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
       </div>
     </a>
     <div class="card">
