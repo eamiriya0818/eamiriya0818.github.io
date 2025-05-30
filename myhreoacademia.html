@@ -65,10 +65,59 @@
       color: #2E2E2E;
     }
     main {
-      margin: 320px 220px 20px 20px;
-      text-align: center;
-    }
-  </style>
+  margin: 40px 220px 20px 20px;
+  text-align: center;
+}
+  .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.card {
+  background-color: #F5E5C0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform .3s, box-shadow .3s;
+  cursor: pointer;
+  position: relative;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card h3 {
+  margin: 15px 0 10px;
+  font-family: "Comic Sans MS", cursive;
+  color: #A0522D;
+  font-size: 20px;
+}
+.card p {
+  font-size: 14px;
+  color: #4E3E2A;
+}
+.card .more-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #EA7500;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+</style>
 </head>
 <body>
 
