@@ -17,24 +17,38 @@
       font-family: "Arial", sans-serif;
     }
     .hero-banner {
-      background: url("title11.jpg") center/cover no-repeat;
-      height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      text-align: center;
-    }
-    .hero-overlay {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 20px 40px;
-      border-radius: 12px;
-    }
-    .hero-overlay h1 {
-      font-size: 32px;
-      color: #A0522D;
-      margin: 0;
-    }
+  background: url("title.jpg") center center / cover no-repeat;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.75); /* 淺白濾鏡 */
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+
+.hero-overlay h1 {
+  font-size: 32px;
+  color: #A0522D;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
+
     nav.side-menu {
       position: fixed;
       top: 0;
