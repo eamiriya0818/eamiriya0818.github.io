@@ -19,7 +19,7 @@
 
     .hero-banner {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: flex-start;
       padding: 30px;
       background-color: #f6d1c3;
@@ -36,6 +36,7 @@
       object-fit: contain;
       border-radius: 12px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      margin-left: 40px;
     }
 
     .left-widgets {
@@ -43,6 +44,7 @@
       flex-direction: column;
       gap: 20px;
       max-width: 220px;
+      margin-left: 0;
     }
 
     .suggest-box {
@@ -73,10 +75,9 @@
       right: 0;
       width: 200px;
       height: 100%;
-      background-color: #f6d1c3;
+      background-color: #F6D1C3;
       padding: 20px;
       box-sizing: border-box;
-      z-index: 1000;
     }
 
     nav.side-menu ul {
@@ -91,23 +92,16 @@
 
     nav.side-menu a {
       text-decoration: none;
-      color: #A94438;
-      font-size: 16px;
-      font-family: "Kaisei Opti", serif;
-    }
-
-    main {
-      margin-right: 220px;
-      padding: 30px;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: 240px;
+      color: #2E2E2E;
+      font-size: 18px;
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
     }
 
     .card {
@@ -119,7 +113,6 @@
       padding: 15px;
       transition: transform .3s, box-shadow .3s;
       cursor: pointer;
-      position: relative;
     }
 
     .card:hover {
@@ -157,6 +150,7 @@
       <h4>🎬 本月推薦</h4>
       <p><strong>《花束般的戀愛》</strong><br>一段青春微酸的邂逅</p>
     </div>
+
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
       <div class="carousel-inner shadow-sm">
         <div class="carousel-item active">
@@ -190,34 +184,22 @@
     <li><a href="ruren100video.html">👻 路人100</a></li>
     <li><a href="TheUmbrellaAcademy.html">☂️ 雨傘學院</a></li>
     <li><a href="HowlsMovingCastle.html">🏰 霍爾的移動城堡</a></li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">📁 看更多文章</a>
-      <ul class="dropdown-menu" style="position:static;float:none;background:#F5E5C0;border:none;">
-        <li><a class="dropdown-item" href="ruren100video.html">📖 路人100心得</a></li>
-        <li><a class="dropdown-item" href="favorites.html">🌟 收藏頁</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">🔗 其他</a></li>
-      </ul>
-    </li>
+    <li><a href="favorites.html">🌟 收藏頁</a></li>
   </ul>
 </nav>
 
 <main>
   <div class="card-grid">
-    <a href="https://eamiriya0818.github.io/ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-      <div class="card">
-        <img src="路人.jpg" alt="路人100">
-        <h3>路人100</h3>
-        <p>還沒看完</p>
-      </div>
-    </a>
-    <a href="https://eamiriya0818.github.io/TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-      <div class="card">
-        <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
-        <h3>雨傘學院</h3>
-        <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
-      </div>
-    </a>
+    <div class="card">
+      <img src="路人.jpg" alt="路人100">
+      <h3>路人100</h3>
+      <p>還沒看完</p>
+    </div>
+    <div class="card">
+      <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
+      <h3>雨傘學院</h3>
+      <p>家庭關係殘破不堪，但我們還是一家人</p>
+    </div>
     <div class="card">
       <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
       <h3>苦盡柑來遇見你</h3>
