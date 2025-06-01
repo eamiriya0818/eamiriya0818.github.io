@@ -16,68 +16,147 @@
       background-color: #f6d1c3;
       color: #A94438;
     }
-.hero-banner {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 30px;
-  background-color: #f6d1c3;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: auto;
-}
 
-.hero-img {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-}
+    .hero-banner {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px;
+      background-color: #f6d1c3;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-.left-widgets {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 220px;
-}
+    .hero-img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
 
-.suggest-box {
-  background-color: #FAE3C8;
-  border: 2px dashed #EA7500;
-  padding: 12px;
-  font-size: 14px;
-  color: #4E3E2A;
-  border-radius: 10px;
-  font-family: "Comic Sans MS", cursive;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
+    .left-widgets {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 220px;
+    }
 
-.carousel-inner img {
-  border-radius: 10px;
-  object-fit: cover;
-  height: 180px;
-}
+    .suggest-box {
+      background-color: #FAE3C8;
+      border: 2px dashed #EA7500;
+      padding: 12px;
+      font-size: 14px;
+      color: #4E3E2A;
+      border-radius: 10px;
+      font-family: "Comic Sans MS", cursive;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
-#carouselExample {
-  max-width: 220px;
-}
+    .carousel-inner img {
+      border-radius: 10px;
+      object-fit: cover;
+      height: 180px;
+    }
+
+    #carouselExample {
+      max-width: 220px;
+    }
+
+    nav.side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #f6d1c3;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1000;
+    }
+
+    nav.side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav.side-menu li {
+      margin-bottom: 15px;
+    }
+
+    nav.side-menu a {
+      text-decoration: none;
+      color: #A94438;
+      font-size: 16px;
+      font-family: "Kaisei Opti", serif;
+    }
+
+    main {
+      margin-right: 220px;
+      padding: 30px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: 240px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #FAE3C8;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      font-family: "Comic Sans MS", cursive;
+      font-size: 20px;
+      background: linear-gradient(to bottom, #4B9CD3, #D97C7C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #4E3E2A;
+    }
   </style>
 </head>
 <body>
 
 <header class="hero-banner">
-  <!-- 左邊：推薦與輪播 -->
   <div class="left-widgets">
     <div class="suggest-box">
       <h4>🎬 本月推薦</h4>
       <p><strong>《花束般的戀愛》</strong><br>一段青春微酸的邂逅</p>
     </div>
-
-    <!-- 輪播圖 -->
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
       <div class="carousel-inner shadow-sm">
         <div class="carousel-item active">
@@ -101,9 +180,9 @@
     </div>
   </div>
 
-  <!-- 右邊：主視覺圖 -->
   <img src="title11.jpg" class="hero-img" alt="主視覺圖">
 </header>
+
 <nav class="side-menu">
   <ul>
     <li><a href="index.html">🏠 首頁</a></li>
