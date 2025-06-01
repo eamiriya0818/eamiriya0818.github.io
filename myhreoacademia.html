@@ -21,11 +21,11 @@
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-      padding: 30px;
+      padding: 30px 40px;
       background-color: #f6d1c3;
-      gap: 40px;
+      gap: 60px;
       flex-wrap: wrap;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
     }
 
@@ -36,15 +36,13 @@
       object-fit: contain;
       border-radius: 12px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      margin-left: 40px;
     }
 
     .left-widgets {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      max-width: 220px;
-      margin-left: 0;
+      width: 220px;
     }
 
     .suggest-box {
@@ -59,14 +57,21 @@
       text-align: center;
     }
 
-    .carousel-inner img {
-      border-radius: 10px;
-      object-fit: cover;
-      height: 180px;
+    #carouselExample {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      border: 1px solid #e48f74;
+      background-color: #fff;
+      padding: 4px;
+      border-radius: 8px;
     }
 
-    #carouselExample {
-      max-width: 220px;
+    .carousel-inner img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
     }
 
     nav.side-menu {
@@ -96,6 +101,27 @@
       font-size: 18px;
     }
 
+    nav.side-menu .nav-item.dropdown:hover .dropdown-menu {
+      display: block !important;
+      animation: fadeIn .4s;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .dropdown-item:hover {
+      background-color: #EBD4A2;
+      color: #2E2E2E;
+    }
+
+    main {
+      margin: 40px auto 20px auto;
+      max-width: 1000px;
+      text-align: center;
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -113,6 +139,7 @@
       padding: 15px;
       transition: transform .3s, box-shadow .3s;
       cursor: pointer;
+      position: relative;
     }
 
     .card:hover {
@@ -144,15 +171,15 @@
 </head>
 <body>
 
+<!-- 標題區塊 -->
 <header class="hero-banner">
   <div class="left-widgets">
     <div class="suggest-box">
       <h4>🎬 本月推薦</h4>
       <p><strong>《花束般的戀愛》</strong><br>一段青春微酸的邂逅</p>
     </div>
-
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
-      <div class="carousel-inner shadow-sm">
+      <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="huashu1lunbo.jpg" class="d-block w-100" alt="推薦圖1">
         </div>
@@ -177,6 +204,7 @@
   <img src="title11.jpg" class="hero-img" alt="主視覺圖">
 </header>
 
+<!-- 側邊選單 -->
 <nav class="side-menu">
   <ul>
     <li><a href="index.html">🏠 首頁</a></li>
@@ -184,22 +212,35 @@
     <li><a href="ruren100video.html">👻 路人100</a></li>
     <li><a href="TheUmbrellaAcademy.html">☂️ 雨傘學院</a></li>
     <li><a href="HowlsMovingCastle.html">🏰 霍爾的移動城堡</a></li>
-    <li><a href="favorites.html">🌟 收藏頁</a></li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">📁 看更多文章</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="ruren100video.html">📖 路人100心得</a></li>
+        <li><a class="dropdown-item" href="favorites.html">🌟 收藏頁</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">🔗 其他</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
+<!-- 主內容區 -->
 <main>
   <div class="card-grid">
-    <div class="card">
-      <img src="路人.jpg" alt="路人100">
-      <h3>路人100</h3>
-      <p>還沒看完</p>
-    </div>
-    <div class="card">
-      <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
-      <h3>雨傘學院</h3>
-      <p>家庭關係殘破不堪，但我們還是一家人</p>
-    </div>
+    <a href="ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+      <div class="card">
+        <img src="路人.jpg" alt="路人100">
+        <h3>路人100</h3>
+        <p>還沒看完</p>
+      </div>
+    </a>
+    <a href="TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+      <div class="card">
+        <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
+        <h3>雨傘學院</h3>
+        <p>幾使我們家庭關係殘破不堪，但我們還是一家人</p>
+      </div>
+    </a>
     <div class="card">
       <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
       <h3>苦盡柑來遇見你</h3>
