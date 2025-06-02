@@ -1,9 +1,11 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>我在Netflix上學到的人生觀</title>
 
-  <!-- ✅ 加入 Noto Sans TC -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap -->
@@ -19,23 +21,37 @@
       color: #A94438;
     }
 
-    /* 其餘 CSS 保持不變 */
+    nav.side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #f6d1c3;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    nav.side-menu ul { list-style: none; padding: 0; margin: 0; }
+    nav.side-menu li { margin-bottom: 15px; }
+    nav.side-menu a {
+      text-decoration: none;
+      color: #2E2E2E;
+      font-size: 18px;
+    }
+    .dropdown-menu { background: #F5E5C0; border: none; }
+
     .hero-banner {
       display: flex;
       align-items: flex-start;
       padding: 30px 20px;
-      background-color: #f6d1c3;
       gap: 40px;
       flex-wrap: wrap;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .hero-left-wrapper {
-      flex-shrink: 0;
       width: 240px;
-      margin-left: 0;
-      margin-right: auto;
       background-color: #fae3c8;
       padding: 20px 16px;
       border-radius: 12px;
@@ -49,7 +65,6 @@
       font-size: 14px;
       color: #4E3E2A;
       border-radius: 10px;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
 
@@ -67,9 +82,53 @@
       width: 100%;
       max-width: 520px;
       height: auto;
-      object-fit: contain;
       border-radius: 12px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    main {
+      margin: 20px 220px 40px 20px;
+      max-width: 1000px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #FAE3C8;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+      text-align: center;
+      padding: 15px;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      font-size: 20px;
+      color: #A94438;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #4E3E2A;
     }
 
     @media (max-width: 768px) {
@@ -78,11 +137,14 @@
         align-items: center;
       }
       .hero-left-wrapper {
-        margin: 0 auto;
         width: 90%;
+        margin: 0 auto;
       }
       .hero-img {
         max-width: 90%;
+      }
+      main {
+        margin: 20px auto;
       }
     }
   </style>
@@ -91,7 +153,6 @@
 
 <!-- Header 區域 -->
 <header class="hero-banner">
-  <!-- 左邊：本月推薦 -->
   <div class="hero-left-wrapper">
     <div class="suggest-box">
       <h4>🎬 本月推薦</h4>
@@ -119,8 +180,6 @@
       </button>
     </div>
   </div>
-
-  <!-- 右邊：主視覺圖 -->
   <img src="title11.jpg" class="hero-img" alt="主視覺圖">
 </header>
 
@@ -134,7 +193,7 @@
     <li><a href="HowlsMovingCastle.html">🏰 霍爾的移動城堡</a></li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">📁 看更多文章</a>
-      <ul class="dropdown-menu" style="position:static;float:none;background:#F5E5C0;border:none;">
+      <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="ruren100video.html">📖 路人100心得</a></li>
         <li><a class="dropdown-item" href="favorites.html">🌟 收藏頁</a></li>
         <li><hr class="dropdown-divider"></li>
@@ -144,23 +203,19 @@
   </ul>
 </nav>
 
-<!-- 主內容卡片區 -->
+<!-- 主內容區 -->
 <main>
   <div class="card-grid">
-    <a href="ruren100video.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-      <div class="card">
-        <img src="路人.jpg" alt="路人100">
-        <h3>路人100</h3>
-        <p>在不平凡的超能力者上<br>怎麼去成長的故事</p>
-      </div>
-    </a>
-    <a href="TheUmbrellaAcademy.html" target="_blank" style="text-decoration:none;color:inherit;display:block;">
-      <div class="card">
-        <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
-        <h3>雨傘學院</h3>
-        <p>幾使我們家庭關係殘破不堪<br>但我們還是一家人</p>
-      </div>
-    </a>
+    <div class="card">
+      <img src="路人.jpg" alt="路人100">
+      <h3>路人100</h3>
+      <p>在不平凡的超能力者上<br>怎麼去成長的故事</p>
+    </div>
+    <div class="card">
+      <img src="雨傘學院.jpg.jpg" alt="雨傘學院">
+      <h3>雨傘學院</h3>
+      <p>幾使我們家庭關係殘破不堪<br>但我們還是一家人</p>
+    </div>
     <div class="card">
       <img src="《苦盡柑來遇見你》.jpg" alt="苦盡柑來遇見你">
       <h3>苦盡柑來遇見你</h3>
@@ -183,5 +238,6 @@
     </div>
   </div>
 </main>
+
 </body>
 </html>
