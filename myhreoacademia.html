@@ -21,6 +21,33 @@
       color: #A94438;
     }
 
+    .left-fixed-tools {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #F8E8D2;
+      padding: 20px 10px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      z-index: 998;
+    }
+    .left-fixed-tools h5 {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .left-fixed-tools ul {
+      padding-left: 16px;
+    }
+    .left-fixed-tools button {
+      background-color: #EA7500;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
     nav.side-menu {
       position: fixed;
       top: 0;
@@ -49,14 +76,17 @@
     .hero-banner {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
       padding: 30px 20px;
+      margin-left: 260px;
+      margin-right: 220px;
       gap: 40px;
-      flex-wrap: wrap;
       max-width: 1000px;
-      margin: auto;
+      box-sizing: border-box;
     }
 
     .hero-left-wrapper {
+      flex-shrink: 0;
       width: 240px;
       background-color: #fae3c8;
       padding: 20px 16px;
@@ -75,7 +105,8 @@
     }
 
     #carouselExample {
-      max-width: 100%;
+      width: 100%;
+      margin-top: 20px;
     }
 
     .carousel-inner img {
@@ -96,6 +127,7 @@
       margin: 40px auto;
       padding: 0 20px;
       max-width: 1000px;
+      box-sizing: border-box;
     }
 
     .card-grid {
@@ -142,18 +174,16 @@
       .hero-banner {
         flex-direction: column;
         align-items: center;
+        margin: 0 auto;
+        padding: 20px;
       }
 
-      .hero-left-wrapper {
+      .hero-left-wrapper, .hero-img {
         width: 90%;
         margin: 0 auto;
       }
 
-      .hero-img {
-        max-width: 90%;
-      }
-
-      nav.side-menu {
+      nav.side-menu, .left-fixed-tools {
         position: static;
         width: 100%;
         height: auto;
@@ -167,9 +197,23 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- Header 區域 -->
+  <div class="left-fixed-tools">
+    <h5>📺 播放清單</h5>
+    <ul>
+      <li>花束般的戀愛</li>
+      <li>雨傘學院</li>
+      <li>貓的報恩</li>
+    </ul>
+    <h5>🗓 即將上映</h5>
+    <ul>
+      <li>再見的練習</li>
+      <li>初戀，第二次</li>
+    </ul>
+    <h5>🎲 隨機推薦</h5>
+    <button onclick="alert('推薦你觀看：霍爾的移動城堡！')">點我看看</button>
+  </div>
+
   <header class="hero-banner">
     <div class="hero-left-wrapper">
       <div class="suggest-box">
@@ -201,7 +245,6 @@
     <img src="title11.jpg" class="hero-img" alt="主視覺圖">
   </header>
 
-  <!-- 側邊選單 -->
   <nav class="side-menu">
     <ul>
       <li><a href="index.html">🏠 首頁</a></li>
@@ -221,7 +264,6 @@
     </ul>
   </nav>
 
-  <!-- 主內容區 -->
   <main>
     <div class="card-grid">
       <div class="card">
@@ -256,6 +298,5 @@
       </div>
     </div>
   </main>
-
 </body>
 </html>
