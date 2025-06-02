@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- HTML5 文件 -->
+<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+<head>
+  <meta charset="UTF-8"> <!-- 字元編碼設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式 -->
+  <title>霍爾的移動城堡</title> <!-- 頁面標題 -->
+  <style>
+    /* === 頁面基本設定 === */
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #F5E5C0;
+      color: #4E3E2A;
+      margin: 30px;
+      line-height: 1.8;
+    }
+
+    /* === 文章標題設定 === */
+    h1 {
+      color: #A0522D;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    /* === 普通超連結設定（備用） === */
+    a {
+      color: #A0522D;
+      text-decoration: none;
+    }
+
+    /* === 麵包屑導航區塊樣式 === */
+    .breadcrumb {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #A0522D;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* === 雙按鈕樣式（回首頁＋回上一頁） === */
+    .button-area {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .action-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #A0522D;
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: "Comic Sans MS", cursive;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .action-button:hover {
+      background-color: #8B3A3A;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🍞 麵包屑導航 -->
+  <div class="breadcrumb">
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> > 霍爾的移動城堡
+  </div>
+
+  <!-- 📄 心得標題 -->
+  <h1>霍爾的移動城堡</h1>
+
+  <!-- 📄 心得內容 -->
+  <p>
+   霍爾的移動城堡原本我剛看完第一集其實原本沒有打算接著看下去。<br>
+    但是我同學不斷的推薦我不要放棄,直到看了第二集後我就開始感受到路人100的魅力了。<br>
+    是一部兼具搞笑以及道理的戰鬥動畫,如果只是一部搞笑的戰鬥動畫,我想可能就不會這麼受歡迎了。<br>
+    
+    
+  </p>
+
+  <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
+  <div class="button-area">
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
+    <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
+  </div>
+
+</body>
+</html>
