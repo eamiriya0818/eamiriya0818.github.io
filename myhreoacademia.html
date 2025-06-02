@@ -171,10 +171,12 @@ nav.side-menu a:hover {
     }
 
     .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      /* 新增的 */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* 將這段搬出來 */
 .card-grid a {
   text-decoration: none;
   color: inherit;
@@ -184,9 +186,6 @@ nav.side-menu a:hover {
 .card-grid a:hover h3 {
   color: #EA7500;
 }
-      
-    }
-
     .card {
       background-color: #FAE3C8;
       border-radius: 12px;
