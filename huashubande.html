@@ -1,11 +1,10 @@
-<!DOCTYPE html> <!-- HTML5 文件 -->
-<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8"> <!-- 字元編碼設定 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式 -->
-  <title>花束般的戀愛</title> <!-- 頁面標題 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花束般的戀愛</title>
   <style>
-    /* === 頁面基本設定 === */
     body {
       font-family: "Arial", sans-serif;
       background-color: #F5E5C0;
@@ -13,40 +12,26 @@
       margin: 30px;
       line-height: 1.8;
     }
-
-    /* === 文章標題設定 === */
     h1 {
       color: #A0522D;
       font-family: "Comic Sans MS", cursive;
+      text-align: center;
     }
-
-    /* === 普通超連結設定（備用） === */
     a {
       color: #A0522D;
       text-decoration: none;
     }
-
-    /* === 麵包屑導航區塊樣式 === */
     .breadcrumb {
       margin-bottom: 20px;
       font-size: 14px;
     }
-
-    .breadcrumb a {
-      color: #A0522D;
-      text-decoration: none;
-    }
-
     .breadcrumb a:hover {
       text-decoration: underline;
     }
-
-    /* === 雙按鈕樣式（回首頁＋回上一頁） === */
     .button-area {
       margin-top: 40px;
       text-align: center;
     }
-
     .action-button {
       display: inline-block;
       margin: 10px;
@@ -60,37 +45,274 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
     }
-
     .action-button:hover {
       background-color: #8B3A3A;
     }
+
+    /* ✅ 心得內容樣式（文字大+居中+圖片統一尺寸） */
+    .centered-content {
+      text-align: center;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .centered-content img {
+      width: 80%;
+      max-width: 500px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* === 留言區樣式（原樣） === */
+    #comment-section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: skyblue;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #comment-section h2 {
+      margin-top: 0;
+      color: #2E2E2E;
+    }
+    #comment-form {
+      margin-bottom: 20px;
+    }
+    #comment-form input[type="text"],
+    #comment-form textarea,
+    #comment-form button,
+    #comment-form input[type="file"],
+    #comment-form select {
+      font-family: inherit;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    #comment-form img.preview {
+      max-width: 100px;
+      display: block;
+      margin-top: 8px;
+    }
+    .comment-item {
+      background: #e0f7ff;
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 4px;
+      position: relative;
+    }
+    .comment-item .meta {
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .comment-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .delete-btn, .edit-btn, .reply-btn {
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 8px;
+      color: #A0522D;
+    }
+    .delete-btn:hover, .edit-btn:hover, .reply-btn:hover {
+      color: #8B3A3A;
+    }
+    .edit-area {
+      width: 100%;
+      height: 60px;
+      margin-top: 6px;
+      display: none;
+    }
+    .replies {
+      margin-left: 48px;
+      margin-top: 10px;
+    }
   </style>
 </head>
-
 <body>
 
   <!-- 🍞 麵包屑導航 -->
   <div class="breadcrumb">
-    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> > 花束般的戀愛
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> &gt; 花束般的戀愛
   </div>
 
   <!-- 📄 心得標題 -->
   <h1>花束般的戀愛</h1>
 
   <!-- 📄 心得內容 -->
-  <p>
-   花束般的戀愛原本我剛看完第一集其實原本沒有打算接著看下去。<br>
-    但是我同學不斷的推薦我不要放棄,直到看了第二集後我就開始感受到路人100的魅力了。<br>
-    是一部兼具搞笑以及道理的戰鬥動畫,如果只是一部搞笑的戰鬥動畫,我想可能就不會這麼受歡迎了。<br>
-    
-    
-  </p>
+  <div class="centered-content">
+    <p>
+      一開始我對《路人100》沒有特別的期待，只是因為朋友推薦才點開。<br>
+      但從第二集開始，我感受到故事的深度與角色的成長魅力。
+    </p>
 
-  <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
+    <img src="花束般的戀愛劇照1.JPG" alt="路人100場景1">
+
+    <p>
+      雖然主打「超能力」，但《路人100》其實是自我認同與青春成長的掙扎。<br>
+茂夫一開始對自己沒有自信，總覺得除了超能力自己一無是處，因為有喜歡的女生,因此加入體育社、努力健身，只希望能「以普通人的方式被人接受」。<br>他的導師靈幻新隆──一位騙人的假靈能力者──卻意外成為他精神的依靠。<br>
+靈幻雖然沒有能力，卻用一套「人生詐術哲學」鼓勵茂夫<br>
+對話讓我重新思考：真正的強大，不在於擁有多少能力，而是你是否能為自己做出選擇，勇敢承擔。
+    </p>
+
+    <img src="花束般的戀愛劇照2.JPG" alt="路人100場景2">
+    <p>
+     茂夫在對敵人動手的場景。他說：超能力不應該用在人身上。
+      雖然我們擁有異於常人的力量。<br> 但我們絕不能誤以為自己是特別的存在
+    </p>
+
+    <img src="花束般的戀愛劇照3.JPG" alt="路人100場景3">
+  
+   <p>
+     對力量有信心是好事<br>但絕對不能沉浸其中
+    </p>
+
+    <img src="花束般的戀愛劇照4.JPG" alt="路人100場景4">
+    <img src="花束般的戀愛劇照5.JPG" alt="路人100場景5">
+  </div>
+
+  <!-- 🎯 雙按鈕 -->
   <div class="button-area">
     <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
     <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
   </div>
 
+  <!-- 📝 留言區 -->
+  <section id="comment-section">
+    <h2>💬 留言區</h2>
+    <form id="comment-form">
+      <input type="text" id="commenter" placeholder="你的大名" required>
+      <select id="avatar-select">
+        <option value="">── 選擇預設頭像 ──</option>
+        <option value="avatars/avatar1.png">🐱 貓咪</option>
+        <option value="avatars/avatar2.png">🐶 小狗</option>
+        <option value="avatars/avatar3.png">🦊 小狐狸</option>
+      </select>
+      <input type="text" id="comment-avatar" placeholder="或自行貼上 Avatar URL">
+      <input type="file" id="comment-image" accept="image/*">
+      <img id="image-preview" class="preview" style="display:none;">
+      <button type="submit">送出</button><br>
+      <textarea id="comment-text" placeholder="在這裡留下你的留言…" required></textarea>
+    </form>
+    <div id="comments-list"></div>
+  </section>
+
+  <!-- 💬 留言功能腳本 -->
+  <script>
+    const bannedWords = ['badword1', 'badword2'];
+    const form = document.getElementById('comment-form');
+    const list = document.getElementById('comments-list');
+    const imageInput = document.getElementById('comment-image');
+    const imagePreview = document.getElementById('image-preview');
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (!file) return imagePreview.style.display = 'none';
+      const reader = new FileReader();
+      reader.onload = e => {
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function containsBanned(text) {
+      return bannedWords.some(w => text.includes(w));
+    }
+
+    function renderComments(arr = comments, container = list) {
+      container.innerHTML = '';
+      arr.forEach((c, idx) => {
+        const div = document.createElement('div');
+        div.className = 'comment-item';
+        div.innerHTML = `
+          <div class="meta">
+            <img src="${c.avatar || 'default-avatar.png'}" class="comment-avatar">
+            <strong>${c.name}</strong> • ${new Date(c.time).toLocaleString()}
+            <button class="delete-btn" data-index="${idx}">✖</button>
+            <button class="edit-btn" data-index="${idx}">✎</button>
+            <button class="reply-btn" data-index="${idx}">↩</button>
+          </div>
+          <div class="text">${c.text.replace(/\n/g,'<br>')}</div>
+          ${c.image ? `<img src="${c.image}" style="max-width:150px;margin-top:8px;">` : ''}
+          <textarea class="edit-area" data-index="${idx}">${c.text}</textarea>
+          <div class="replies" data-index="${idx}"></div>
+        `;
+        container.appendChild(div);
+
+        div.querySelector('.delete-btn').onclick = () => {
+          comments.splice(idx, 1);
+          saveAndRe();
+        };
+        const editBtn = div.querySelector('.edit-btn');
+        const editArea = div.querySelector('.edit-area');
+        editBtn.onclick = () => {
+          if (editArea.style.display === 'none') {
+            editArea.style.display = 'block';
+            editBtn.textContent = '✔';
+            editArea.focus();
+          } else {
+            const newText = editArea.value.trim();
+            if (newText && !containsBanned(newText)) {
+              comments[idx].text = newText;
+              saveAndRe();
+            }
+          }
+        };
+        div.querySelector('.reply-btn').onclick = () => {
+          const replyText = prompt('輸入你的回覆：');
+          if (replyText && !containsBanned(replyText)) {
+            comments[idx].replies = comments[idx].replies || [];
+            comments[idx].replies.push({
+              name: comments[idx].name,
+              text: replyText,
+              time: Date.now()
+            });
+            saveAndRe();
+          }
+        };
+        if (c.replies) {
+          renderComments(c.replies, div.querySelector('.replies'));
+        }
+      });
+    }
+
+    function saveAndRe() {
+      localStorage.setItem('comments', JSON.stringify(comments));
+      renderComments();
+    }
+
+    form.onsubmit = e => {
+      e.preventDefault();
+      const name = form.commenter.value.trim();
+      const text = form['comment-text'].value.trim();
+      if (!name || !text || containsBanned(text)) return;
+      const newC = { name, text, time: Date.now() };
+      const preset = document.getElementById('avatar-select').value;
+      if (preset) newC.avatar = preset;
+      else {
+        const av = form['comment-avatar'].value.trim();
+        if (av) newC.avatar = av;
+      }
+      if (imagePreview.src) newC.image = imagePreview.src;
+      comments.unshift(newC);
+      if (comments.length > 50) comments.pop();
+      form.reset();
+      imagePreview.style.display = 'none';
+      saveAndRe();
+    };
+
+    renderComments();
+  </script>
 </body>
 </html>
