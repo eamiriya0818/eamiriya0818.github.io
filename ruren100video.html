@@ -1,11 +1,10 @@
-<!DOCTYPE html> <!-- HTML5 文件 -->
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>路人100</title>
   <style>
-    /* === 頁面基本樣式（既有） === */
     body {
       font-family: "Arial", sans-serif;
       background-color: #F5E5C0;
@@ -16,6 +15,7 @@
     h1 {
       color: #A0522D;
       font-family: "Comic Sans MS", cursive;
+      text-align: center;
     }
     a {
       color: #A0522D;
@@ -49,11 +49,28 @@
       background-color: #8B3A3A;
     }
 
-    /* === 新增：留言區樣式開始 === */
+    /* ✅ 心得內容樣式（文字大+居中+圖片統一尺寸） */
+    .centered-content {
+      text-align: center;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .centered-content img {
+      width: 80%;
+      max-width: 500px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* === 留言區樣式（原樣） === */
     #comment-section {
       max-width: 800px;
       margin: 40px auto;
-      background: skyblue;                   /* 新增：天空藍背景 */
+      background: skyblue;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -69,7 +86,7 @@
     #comment-form textarea,
     #comment-form button,
     #comment-form input[type="file"],
-    #comment-form select {                   /* 新增：select 同樣繼承樣式 */
+    #comment-form select {
       font-family: inherit;
       font-size: 14px;
       margin-bottom: 8px;
@@ -80,25 +97,25 @@
       margin-top: 8px;
     }
     .comment-item {
-      background: #e0f7ff;                    /* 新增：淺天藍 */
+      background: #e0f7ff;
       padding: 10px;
       margin-top: 12px;
       border-radius: 4px;
-      position: relative;                     /* 新增：定位按鈕 */
+      position: relative;
     }
     .comment-item .meta {
       font-size: 12px;
       color: #444;
       margin-bottom: 6px;
     }
-    .comment-avatar {                         /* 新增：Avatar 圖示 */
+    .comment-avatar {
       width: 40px; height: 40px;
       border-radius: 50%;
       object-fit: cover;
       vertical-align: middle;
       margin-right: 8px;
     }
-    .delete-btn, .edit-btn, .reply-btn {     /* 新增：功能按鈕 */
+    .delete-btn, .edit-btn, .reply-btn {
       background: transparent;
       border: none;
       font-size: 14px;
@@ -109,37 +126,17 @@
     .delete-btn:hover, .edit-btn:hover, .reply-btn:hover {
       color: #8B3A3A;
     }
-    .edit-area {                              /* 新增：編輯輸入框 */
+    .edit-area {
       width: 100%;
       height: 60px;
       margin-top: 6px;
       display: none;
     }
-    .replies {                               /* 新增：回覆容器縮排 */
+    .replies {
       margin-left: 48px;
       margin-top: 10px;
     }
-    /* === 新增：留言區樣式結束 === */
-  <style>
-  /* === 原本的樣式略... === */
-
-  /* ✅ 正確：這一段要放在 style 裡面才有效 */
-  .centered-content {
-    text-align: center;
-  }
-
-  .centered-content img {
-    max-width: 90%;
-    height: auto;
-    margin: 20px 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-</style>
-
+  </style>
 </head>
 <body>
 
@@ -153,66 +150,56 @@
 
   <!-- 📄 心得內容 -->
   <div class="centered-content">
-  <p>
-    一開始我對《路人100》沒有特別的期待，只是因為朋友推薦才點開。<br>
-    但從第二集開始，我感受到故事的深度與角色的成長魅力。
-  </p>
+    <p>
+      一開始我對《路人100》沒有特別的期待，只是因為朋友推薦才點開。<br>
+      但從第二集開始，我感受到故事的深度與角色的成長魅力。
+    </p>
 
-  <img src="路人心得1照片.jpg"路人100場景1">
+    <img src="路人心得1照片.jpg" alt="路人100場景1">
 
-  <p>
-    主角雖然看起來平凡，卻讓我聯想到我們每個人都可能在平凡中發現不平凡。<br>
-    畫面色調也十分細膩，很有感情。
-  </p>
+    <p>
+      主角雖然看起來平凡，卻讓我聯想到我們每個人都可能在平凡中發現不平凡。<br>
+      畫面色調也十分細膩，很有感情。
+    </p>
 
-  <img src="路人靈幻劇照心得2.jpg" alt="路人100場景2">
-</div>
+    <img src="路人靈幻劇照心得2.jpg" alt="路人100場景2">
+  </div>
 
-  <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
+  <!-- 🎯 雙按鈕 -->
   <div class="button-area">
     <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
     <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
   </div>
 
-  <!-- === 新增：留言區 HTML 開始 === -->
+  <!-- 📝 留言區 -->
   <section id="comment-section">
     <h2>💬 留言區</h2>
     <form id="comment-form">
       <input type="text" id="commenter" placeholder="你的大名" required>
-
-      <!-- 新增：預設 Avatar 選單 -->
       <select id="avatar-select">
         <option value="">── 選擇預設頭像 ──</option>
         <option value="avatars/avatar1.png">🐱 貓咪</option>
         <option value="avatars/avatar2.png">🐶 小狗</option>
         <option value="avatars/avatar3.png">🦊 小狐狸</option>
       </select>
-
-      <!-- 新增：Avatar URL 欄位 -->
       <input type="text" id="comment-avatar" placeholder="或自行貼上 Avatar URL">
-
-      <!-- 新增：圖片上傳欄位 -->
       <input type="file" id="comment-image" accept="image/*">
       <img id="image-preview" class="preview" style="display:none;">
-
       <button type="submit">送出</button><br>
       <textarea id="comment-text" placeholder="在這裡留下你的留言…" required></textarea>
     </form>
     <div id="comments-list"></div>
   </section>
-  <!-- === 新增：留言區 HTML 結束 === -->
 
-  <!-- === 新增：留言區 JavaScript 開始 === -->
+  <!-- 💬 留言功能腳本 -->
   <script>
-    const bannedWords = ['badword1','badword2']; // 新增：敏感詞過濾清單
-
+    const bannedWords = ['badword1', 'badword2'];
     const form = document.getElementById('comment-form');
     const list = document.getElementById('comments-list');
     const imageInput = document.getElementById('comment-image');
     const imagePreview = document.getElementById('image-preview');
     let comments = JSON.parse(localStorage.getItem('comments') || '[]');
 
-    // 新增：圖片預覽
     imageInput.addEventListener('change', () => {
       const file = imageInput.files[0];
       if (!file) return imagePreview.style.display = 'none';
@@ -224,12 +211,10 @@
       reader.readAsDataURL(file);
     });
 
-    // 新增：檢查敏感詞
     function containsBanned(text) {
       return bannedWords.some(w => text.includes(w));
     }
 
-    // 渲染留言（含回覆、編輯、刪除、Avatar、上傳圖、回覆）
     function renderComments(arr = comments, container = list) {
       container.innerHTML = '';
       arr.forEach((c, idx) => {
@@ -250,12 +235,10 @@
         `;
         container.appendChild(div);
 
-        // 刪除
         div.querySelector('.delete-btn').onclick = () => {
           comments.splice(idx, 1);
           saveAndRe();
         };
-        // 編輯
         const editBtn = div.querySelector('.edit-btn');
         const editArea = div.querySelector('.edit-area');
         editBtn.onclick = () => {
@@ -271,7 +254,6 @@
             }
           }
         };
-        // 回覆
         div.querySelector('.reply-btn').onclick = () => {
           const replyText = prompt('輸入你的回覆：');
           if (replyText && !containsBanned(replyText)) {
@@ -284,7 +266,6 @@
             saveAndRe();
           }
         };
-        // 遞迴渲染回覆
         if (c.replies) {
           renderComments(c.replies, div.querySelector('.replies'));
         }
@@ -296,25 +277,19 @@
       renderComments();
     }
 
-    // 新增留言
     form.onsubmit = e => {
       e.preventDefault();
       const name = form.commenter.value.trim();
       const text = form['comment-text'].value.trim();
       if (!name || !text || containsBanned(text)) return;
       const newC = { name, text, time: Date.now() };
-
-      // 新增：優先使用下拉選的 Avatar
       const preset = document.getElementById('avatar-select').value;
       if (preset) newC.avatar = preset;
       else {
         const av = form['comment-avatar'].value.trim();
         if (av) newC.avatar = av;
       }
-
-      // 新增：上傳圖片
       if (imagePreview.src) newC.image = imagePreview.src;
-
       comments.unshift(newC);
       if (comments.length > 50) comments.pop();
       form.reset();
@@ -322,10 +297,7 @@
       saveAndRe();
     };
 
-    // 初始渲染
     renderComments();
   </script>
-  <!-- === 新增：留言區 JavaScript 結束 === -->
-
 </body>
 </html>
