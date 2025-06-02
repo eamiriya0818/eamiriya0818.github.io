@@ -1,11 +1,10 @@
-<!DOCTYPE html> <!-- HTML5 文件 -->
-<html lang="zh-Hant"> <!-- 設定語言為繁體中文 -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8"> <!-- 字元編碼設定 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式 -->
-  <title>貓的報恩</title> <!-- 頁面標題 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>貓的報恩</title>
   <style>
-    /* === 頁面基本設定 === */
     body {
       font-family: "Arial", sans-serif;
       background-color: #F5E5C0;
@@ -13,40 +12,26 @@
       margin: 30px;
       line-height: 1.8;
     }
-
-    /* === 文章標題設定 === */
     h1 {
       color: #A0522D;
       font-family: "Comic Sans MS", cursive;
+      text-align: center;
     }
-
-    /* === 普通超連結設定（備用） === */
     a {
       color: #A0522D;
       text-decoration: none;
     }
-
-    /* === 麵包屑導航區塊樣式 === */
     .breadcrumb {
       margin-bottom: 20px;
       font-size: 14px;
     }
-
-    .breadcrumb a {
-      color: #A0522D;
-      text-decoration: none;
-    }
-
     .breadcrumb a:hover {
       text-decoration: underline;
     }
-
-    /* === 雙按鈕樣式（回首頁＋回上一頁） === */
     .button-area {
       margin-top: 40px;
       text-align: center;
     }
-
     .action-button {
       display: inline-block;
       margin: 10px;
@@ -60,37 +45,278 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
     }
-
     .action-button:hover {
       background-color: #8B3A3A;
     }
+
+    /* ✅ 心得內容樣式（文字大+居中+圖片統一尺寸） */
+    .centered-content {
+      text-align: center;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .centered-content img {
+      width: 80%;
+      max-width: 500px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* === 留言區樣式（原樣） === */
+    #comment-section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: skyblue;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #comment-section h2 {
+      margin-top: 0;
+      color: #2E2E2E;
+    }
+    #comment-form {
+      margin-bottom: 20px;
+    }
+    #comment-form input[type="text"],
+    #comment-form textarea,
+    #comment-form button,
+    #comment-form input[type="file"],
+    #comment-form select {
+      font-family: inherit;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    #comment-form img.preview {
+      max-width: 100px;
+      display: block;
+      margin-top: 8px;
+    }
+    .comment-item {
+      background: #e0f7ff;
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 4px;
+      position: relative;
+    }
+    .comment-item .meta {
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .comment-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .delete-btn, .edit-btn, .reply-btn {
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 8px;
+      color: #A0522D;
+    }
+    .delete-btn:hover, .edit-btn:hover, .reply-btn:hover {
+      color: #8B3A3A;
+    }
+    .edit-area {
+      width: 100%;
+      height: 60px;
+      margin-top: 6px;
+      display: none;
+    }
+    .replies {
+      margin-left: 48px;
+      margin-top: 10px;
+    }
   </style>
 </head>
-
 <body>
 
   <!-- 🍞 麵包屑導航 -->
   <div class="breadcrumb">
-    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> > 貓的報恩
+    <a href="https://eamiriya0818.github.io/myhreoacademia.html" target="_blank">首頁</a> &gt; 貓的報恩
   </div>
 
   <!-- 📄 心得標題 -->
   <h1>貓的報恩</h1>
 
   <!-- 📄 心得內容 -->
-  <p>
-   貓的報恩原本我剛看完第一集其實原本沒有打算接著看下去。<br>
-    但是我同學不斷的推薦我不要放棄,直到看了第二集後我就開始感受到路人100的魅力了。<br>
-    是一部兼具搞笑以及道理的戰鬥動畫,如果只是一部搞笑的戰鬥動畫,我想可能就不會這麼受歡迎了。<br>
-    
-    
-  </p>
+  <div class="centered-content">
+    <p>
+    《貓的報恩》是一部輕鬆、奇幻又充滿童趣的動畫電影。<br>雖然不像《神隱少女》那樣龐大複雜，但它用簡單的故事，<br>講了一件我覺得非常重要的事：學會「做自己」，並且勇敢說出自己的心聲。
+    </p>
 
-  <!-- 🎯 雙按鈕（回首頁＋回上一頁） -->
+    <img src="貓的報恩劇照1.jpg" alt="路人100場景1">
+
+    <p>
+      主角春是一名平凡的高中女孩，個性有些膽小、優柔寡斷，常常配合別人、不太懂得拒絕。<br>有一天，她在放學路上救了一隻差點被卡車撞到的貓，沒想到這隻貓竟然是「貓王國的王子」！<br>
+
+為了報恩，貓王國派出大批貓咪送禮物給她，甚至強行要她嫁給王子。<br>春一開始還懷疑自己是不是在做夢，直到她發現自己竟然慢慢變成了一隻貓……<br>
+
+在逃亡過程中，她遇見了風度翩翩的「男爵」巴隆，還有忠誠搞笑的胖貓穆達。<br>他們帶著春一起踏上了從貓王國逃脫、找回人類身分的旅程。
+
+    <img src="貓的報恩劇照2.jpg" alt="路人100場景2">
+    <p>
+    整部片的核心，不是王子，也不是貓王，而是春自己的轉變。
+
+她一開始的樣子，就像很多人青春期時的模樣——明明不喜歡，卻不知道怎麼拒絕；明明迷惘，卻不知道怎麼選擇。<br>
+
+貓王國的世界就像是一場誇張的夢，把她一直壓抑的「討好性格」放大到了極致。她被稱讚、被寵愛、被安排婚事，彷彿一切都很夢幻，卻根本不是她想要的生活。<br>
+
+直到最後，她終於大聲說出：「我不要！我不要當貓，也不要被安排我的人生！」那一刻，她真正地「醒」了。
+    </p>
+
+    <img src="貓的報恩劇照3.jpg" alt="路人100場景3">
+  
+   <p>
+     沒寫完拉
+    </p>
+
+    <img src="貓的報恩劇照4.jpg" alt="路人100場景4">
+    <img src="貓的報恩劇照5.jpg" alt="路人100場景5">
+  </div>
+
+  <!-- 🎯 雙按鈕 -->
   <div class="button-area">
     <a href="https://eamiriya0818.github.io/myhreoacademia.html" class="action-button" target="_blank">🏠 回到首頁</a>
     <a href="javascript:history.back()" class="action-button">↩ 回上一頁</a>
   </div>
 
+  <!-- 📝 留言區 -->
+  <section id="comment-section">
+    <h2>💬 留言區</h2>
+    <form id="comment-form">
+      <input type="text" id="commenter" placeholder="你的大名" required>
+      <select id="avatar-select">
+        <option value="">── 選擇預設頭像 ──</option>
+        <option value="avatars/avatar1.png">🐱 貓咪</option>
+        <option value="avatars/avatar2.png">🐶 小狗</option>
+        <option value="avatars/avatar3.png">🦊 小狐狸</option>
+      </select>
+      <input type="text" id="comment-avatar" placeholder="或自行貼上 Avatar URL">
+      <input type="file" id="comment-image" accept="image/*">
+      <img id="image-preview" class="preview" style="display:none;">
+      <button type="submit">送出</button><br>
+      <textarea id="comment-text" placeholder="在這裡留下你的留言…" required></textarea>
+    </form>
+    <div id="comments-list"></div>
+  </section>
+
+  <!-- 💬 留言功能腳本 -->
+  <script>
+    const bannedWords = ['badword1', 'badword2'];
+    const form = document.getElementById('comment-form');
+    const list = document.getElementById('comments-list');
+    const imageInput = document.getElementById('comment-image');
+    const imagePreview = document.getElementById('image-preview');
+    let comments = JSON.parse(localStorage.getItem('comments') || '[]');
+
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (!file) return imagePreview.style.display = 'none';
+      const reader = new FileReader();
+      reader.onload = e => {
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function containsBanned(text) {
+      return bannedWords.some(w => text.includes(w));
+    }
+
+    function renderComments(arr = comments, container = list) {
+      container.innerHTML = '';
+      arr.forEach((c, idx) => {
+        const div = document.createElement('div');
+        div.className = 'comment-item';
+        div.innerHTML = `
+          <div class="meta">
+            <img src="${c.avatar || 'default-avatar.png'}" class="comment-avatar">
+            <strong>${c.name}</strong> • ${new Date(c.time).toLocaleString()}
+            <button class="delete-btn" data-index="${idx}">✖</button>
+            <button class="edit-btn" data-index="${idx}">✎</button>
+            <button class="reply-btn" data-index="${idx}">↩</button>
+          </div>
+          <div class="text">${c.text.replace(/\n/g,'<br>')}</div>
+          ${c.image ? `<img src="${c.image}" style="max-width:150px;margin-top:8px;">` : ''}
+          <textarea class="edit-area" data-index="${idx}">${c.text}</textarea>
+          <div class="replies" data-index="${idx}"></div>
+        `;
+        container.appendChild(div);
+
+        div.querySelector('.delete-btn').onclick = () => {
+          comments.splice(idx, 1);
+          saveAndRe();
+        };
+        const editBtn = div.querySelector('.edit-btn');
+        const editArea = div.querySelector('.edit-area');
+        editBtn.onclick = () => {
+          if (editArea.style.display === 'none') {
+            editArea.style.display = 'block';
+            editBtn.textContent = '✔';
+            editArea.focus();
+          } else {
+            const newText = editArea.value.trim();
+            if (newText && !containsBanned(newText)) {
+              comments[idx].text = newText;
+              saveAndRe();
+            }
+          }
+        };
+        div.querySelector('.reply-btn').onclick = () => {
+          const replyText = prompt('輸入你的回覆：');
+          if (replyText && !containsBanned(replyText)) {
+            comments[idx].replies = comments[idx].replies || [];
+            comments[idx].replies.push({
+              name: comments[idx].name,
+              text: replyText,
+              time: Date.now()
+            });
+            saveAndRe();
+          }
+        };
+        if (c.replies) {
+          renderComments(c.replies, div.querySelector('.replies'));
+        }
+      });
+    }
+
+    function saveAndRe() {
+      localStorage.setItem('comments', JSON.stringify(comments));
+      renderComments();
+    }
+
+    form.onsubmit = e => {
+      e.preventDefault();
+      const name = form.commenter.value.trim();
+      const text = form['comment-text'].value.trim();
+      if (!name || !text || containsBanned(text)) return;
+      const newC = { name, text, time: Date.now() };
+      const preset = document.getElementById('avatar-select').value;
+      if (preset) newC.avatar = preset;
+      else {
+        const av = form['comment-avatar'].value.trim();
+        if (av) newC.avatar = av;
+      }
+      if (imagePreview.src) newC.image = imagePreview.src;
+      comments.unshift(newC);
+      if (comments.length > 50) comments.pop();
+      form.reset();
+      imagePreview.style.display = 'none';
+      saveAndRe();
+    };
+
+    renderComments();
+  </script>
 </body>
 </html>
