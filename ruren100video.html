@@ -120,21 +120,25 @@
       margin-top: 10px;
     }
     /* === 新增：留言區樣式結束 === */
-  </style>
-  .centered-content {
-  text-align: center;
-}
+  <style>
+  /* === 原本的樣式略... === */
 
-.centered-content img {
-  max-width: 90%;
-  height: auto;
-  margin: 20px 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+  /* ✅ 正確：這一段要放在 style 裡面才有效 */
+  .centered-content {
+    text-align: center;
+  }
+
+  .centered-content img {
+    max-width: 90%;
+    height: auto;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+</style>
 
 </head>
 <body>
@@ -154,7 +158,7 @@
     但從第二集開始，我感受到故事的深度與角色的成長魅力。
   </p>
 
-  <img src=路人心得1照片.jpg"路人100場景1">
+  <img src="路人心得1照片.jpg"路人100場景1">
 
   <p>
     主角雖然看起來平凡，卻讓我聯想到我們每個人都可能在平凡中發現不平凡。<br>
